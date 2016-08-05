@@ -58,3 +58,9 @@ genurl () {
     echo $url
 }
 
+# Create the cscope database in a specific directory
+csdb() {
+    cd $1
+    find . -iname '*.c' -o -iname '*.cpp' -o -iname '*.h' -o -iname '*.hpp' > cscope.files
+    cscope -bq
+}

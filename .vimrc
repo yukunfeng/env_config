@@ -29,9 +29,9 @@ set softtabstop=4	" number of spaces that a <Tab> counts for while performing ed
 set ignorecase
 set smartcase   " override the 'ignorecase' option if the search pattern contains upper case characters
 
-" insert timestamp
-nnoremap <F5> i<C-R>=strftime("%Y-%m-%d")<Return><Esc>
-inoremap <F5> <C-R>=strftime("%Y-%m-%d")<Return>
+" insert timestamp (now inserting the timestamp can be dong by Ultisnips)
+"nnoremap <F5> i<C-R>=strftime("%Y-%m-%d")<Return><Esc>
+"inoremap <F5> <C-R>=strftime("%Y-%m-%d")<Return>
 
 " remove all trailing whitespace by pressing F6
 nnoremap <F6> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:noh<CR>
@@ -149,3 +149,29 @@ let g:UltiSnipsJumpForwardTrigger="<c-n>"
 let g:UltiSnipsJumpBackwardTrigger="<c-p>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+
+" setting for cscope. Parts of the script come from http://cscope.sourceforge.net/cscope_maps.vim
+if has("cscope")
+    " show msg when any other cscope db added
+    set cscopeverbose  
+    " add any cscope database in current directory
+    if filereadable("cscope.out")
+        cs add cscope.out  
+    " else add the database pointed to by environment variable 
+    elseif $CSCOPE_DB != ""
+        cs add $CSCOPE_DB
+    endif
+
+    nmap ,fs :cs find s <C-R>=expand("<cword>")<CR><CR> " 's' symbol: find all references to the token under cursor
+    nmap ,fg :cs find g <C-R>=expand("<cword>")<CR><CR> " 'g' global: find global definition(s) of the token under cursor
+    nmap ,fc :cs find c <C-R>=expand("<cword>")<CR><CR> " 'c' calls:  find all calls to the function name under cursor
+    nmap ,ft :cs find t <C-R>=expand("<cword>")<CR><CR> " 't' text:   find all instances of the text under cursor
+    nmap ,fe :cs find e <C-R>=expand("<cword>")<CR><CR> " 'e' egrep:  egrep search for the word under cursor
+    nmap ,ff :cs find f <C-R>=expand("<cfile>")<CR><CR> " 'f' file:   open the filename under cursor
+    nmap ,fi :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR> " 'i' includes: find files that include the filename under cursor
+    nmap ,fd :cs find d <C-R>=expand("<cword>")<CR><CR> " 'd' called: find functions that function under cursor calls
+
+endif
+
+
