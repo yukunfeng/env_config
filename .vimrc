@@ -177,3 +177,4 @@ if has("cscope")
 
 endif
 
+" test for git cache
