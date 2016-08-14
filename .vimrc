@@ -20,6 +20,10 @@ set encoding=utf-8
 " but vim ofen detect it wrongly)
 nnoremap <F7> :e ++enc=gbk<CR>
 
+" dictionary word completion using ctrl-x ctrl-k
+set dictionary+=/usr/share/dict/words
+imap <c-k> <c-x><c-k>
+
 " the best explanation about tab in vim I have seen is http://tedlogan.com/techblog3.html
 set expandtab        " in Insert mode: Use the appropriate number of spaces to insert a <Tab>.
 set tabstop=4        " number of spaces that a <Tab> in the file counts for
