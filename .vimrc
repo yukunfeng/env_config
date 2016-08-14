@@ -149,19 +149,22 @@ let g:UltiSnipsJumpForwardTrigger="<c-n>"
 let g:UltiSnipsJumpBackwardTrigger="<c-p>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsSnippetDirectories=["myultisnips", "UltiSnips"]
 
 
 " setting for cscope. Parts of the script come from http://cscope.sourceforge.net/cscope_maps.vim
 if has("cscope")
-    " show msg when any other cscope db added
-    set cscopeverbose  
-    " add any cscope database in current directory
-    if filereadable("cscope.out")
-        cs add cscope.out  
-    " else add the database pointed to by environment variable 
-    elseif $CSCOPE_DB != ""
-        cs add $CSCOPE_DB
-    endif
+    " look for cscope file everywhere starting from the current directory up to the root.
+    function! LoadCscope()
+        let db = findfile("cscope.out", ".;")
+        if (!empty(db))
+            let path = strpart(db, 0, match(db, "/cscope.out$"))
+            set nocscopeverbose " suppress 'duplicate connection' error
+            exe "cs add " . db . " " . path
+            set cscopeverbose
+        endif
+    endfunction
+    au BufEnter /* call LoadCscope()
 
     nmap ,fs :cs find s <C-R>=expand("<cword>")<CR><CR> " 's' symbol: find all references to the token under cursor
     nmap ,fg :cs find g <C-R>=expand("<cword>")<CR><CR> " 'g' global: find global definition(s) of the token under cursor
@@ -173,5 +176,4 @@ if has("cscope")
     nmap ,fd :cs find d <C-R>=expand("<cword>")<CR><CR> " 'd' called: find functions that function under cursor calls
 
 endif
-
 
