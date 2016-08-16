@@ -11,3 +11,12 @@ snippet docb "document brief"
 # Description:	${2: write brief description here}
 # ----------------------------------------------------------------------
 endsnippet
+
+snippet pc "parameter check"
+if [ $# != ${1:1} ]; then 
+    echo "argument number : $#"
+    echo "usage: $0 ${2:file}"
+    exit 1
+	echo ""
+fi
+endsnippet
