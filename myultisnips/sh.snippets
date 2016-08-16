@@ -1,8 +1,3 @@
-#######################################################################
-#                     Document Brief Description                      #
-#######################################################################
-
-# The comment uses '#'.
 snippet docb "document brief"
 # ----------------------------------------------------------------------
 # Author:	Yukun Feng
@@ -12,11 +7,18 @@ snippet docb "document brief"
 # ----------------------------------------------------------------------
 endsnippet
 
-snippet pc "parameter check"
+snippet paramcheck "parameter check"
 if [ $# != ${1:1} ]; then 
     echo "argument number : $#"
     echo "usage: $0 ${2:file}"
     exit 1
 	echo ""
+fi
+endsnippet
+
+snippet stcheck "status check"
+if [ ! $? -eq 0 ]; then
+    echo "${1:Failed to excute}"
+    exit 1
 fi
 endsnippet
