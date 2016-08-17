@@ -116,7 +116,7 @@ noremap ,m :call NERDComment(1, 'minimal')<Return>
 noremap ,i :call NERDComment(1, 'invert')<Return>
 noremap ,s :call NERDComment(1, 'sexy')<Return>
 noremap ,u :call NERDComment(1, 'uncomment')<Return>
-"let NERDSpaceDelims = 1        " leave a space after commentering
+let NERDSpaceDelims = 1        " leave a space after commentering
 
 """ setting for auto pairs
 " to insert one pair purely, use use Ctrl-V + pair
