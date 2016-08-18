@@ -23,3 +23,10 @@ snippet sfunccom "simple function comment"
  * @return: 0 success, non 0 failure
  */
 endsnippet
+
+snippet stcheck "status check"
+if (ret != 0) {
+	WARN("Failed to ${1:}");
+	return -1;
+}
+endsnippet
