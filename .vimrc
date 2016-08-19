@@ -33,7 +33,9 @@ set softtabstop=4	" number of spaces that a <Tab> counts for while performing ed
 set ignorecase
 set smartcase   " override the 'ignorecase' option if the search pattern contains upper case characters
 
-" insert timestamp (now inserting the timestamp can be dong by Ultisnips)
+set noundofile  " stop vim from creating a "un~" file.
+
+" insert timestamp (now inserting the timestamp can be done by Ultisnips)
 "nnoremap <F5> i<C-R>=strftime("%Y-%m-%d")<Return><Esc>
 "inoremap <F5> <C-R>=strftime("%Y-%m-%d")<Return>
 
@@ -149,8 +151,8 @@ set tags=./tags,tags;/
 " setting for ultisnips
 " Trigger configuration. Do not use <tab> if you use " https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger=",e"
-let g:UltiSnipsJumpForwardTrigger="<c-n>"
-let g:UltiSnipsJumpBackwardTrigger="<c-p>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsSnippetDirectories=["myultisnips", "UltiSnips"]

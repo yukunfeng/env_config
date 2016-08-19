@@ -54,7 +54,7 @@ wipe_out () {
 
 # Generate URL for networking command (e.g., wget, scp) on the current working directory
 genurl () {
-    url="$USER@$(hostname):$(pwd)"
+    url="$USER@$(hostname):$(pwd)/$(basename "$1")"
     echo $url
 }
 
