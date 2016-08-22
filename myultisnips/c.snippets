@@ -36,7 +36,8 @@ try {
 	${1:}
 }
 catch (...) {
-
+	WARN("Failed to ${1:}");
+	return -1;
 }
 endsnippet
 
