@@ -39,3 +39,10 @@ catch (...) {
 
 }
 endsnippet
+
+snippet paramcheck "parameters check"
+if (argc != ${1:}) {
+ cout << "parameter number: " << argc << endl;
+ cout << "usage: " << argv[0] << "${2}" << endl;
+}
+endsnippet
