@@ -43,8 +43,14 @@ set noundofile  " stop vim from creating a "un~" file.
 nnoremap <F6> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:noh<CR>
 
 " 79 column layout concerns
-"set colorcolumn=79    " this will display a column at 79
-set colorcolumn=99    " this will display a column at 99. This setting is for baidu speech server
+let column_limit=99
+let &colorcolumn=column_limit   " a vertical line will appear at column_limit
+
+" setting for word wrapping, see http://vim.wikia.com/wiki/Automatic_word_wrapping
+set fo+=t
+set fo-=l
+let &tw=column_limit     " automatic word wrapping at column_limit. Set 0 to stop wrapping
+" gq to wrap selected lines, gqq wraps the current line and gqip wraps current paragraph
 " au BufWinEnter * let w:m2=matchadd('Underlined', '\%>' . 80 . 'v.\+', -1)    " this will high light when a column exceeds 80
 
 " short cut for change windows
