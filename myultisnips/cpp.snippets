@@ -5,3 +5,11 @@ using std::cout;
 using std::cin;
 using std::endl;
 endsnippet
+
+snippet usage "print programme's usage"
+void usage(const char *program_name, const std::string &param,
+		const std::string &default_param) {
+	std::cout << "Usage: ./" << program_name << " [" << param << "]" << std::endl;
+	std::cout << "If no parameters, use default:" << default_param << std::endl;
+}
+endsnippet
