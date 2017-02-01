@@ -38,7 +38,16 @@ fi
 
 # My rm operation which is a much safer way
 safe_rm () {
-    mv --backup=t $* ${trash_dir}
+    if [ $# != 1 ]; then
+        echo "Paramters error"
+    fi
+    current_file_path=$1
+    file_basename=$(basename $current_file_path)
+    file_trash_path="$trash_dir/$file_basename"
+    if [ -e "$file_trash_path" ]; then
+        rm -rf $file_trash_path
+    fi
+    mv $current_file_path ${trash_dir}
 }
 
 # Convenient pep8 to check python scripts
@@ -64,3 +73,14 @@ csdb() {
     find . -iname '*.c' -o -iname '*.cpp' -o -iname '*.h' -o -iname '*.hpp' > cscope.files
     cscope -bq
 }
+
+# make()
+# {
+  # pathpat="(/[^/]*)+:[0-9]+"
+  # ccred=$(echo -e "\033[0;31m")
+  # ccyellow=$(echo -e "\033[0;33m")
+  # ccend=$(echo -e "\033[0m")
+  # /usr/bin/make "$@" 2>&1 | sed -r -e "/[Ee]rror[: ]/ s%$pathpat%$ccred&$ccend%g" -e "/[Ww]arning[: ]/ s%$pathpat%$ccyellow&$ccend%g"
+  # return ${PIPESTATUS[0]}
+# }
+

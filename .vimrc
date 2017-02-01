@@ -88,10 +88,11 @@ Plugin 'majutsushi/tagbar'      " better support than taglist for object oriente
 Plugin 'Yggdroot/indentLine'
 " YouCompleteMe is a plugin with a compiled component. So read the doc about how to install it correctly
 Plugin 'Valloric/YouCompleteMe'
-"Plugin 'Shougo/neocomplete'
+" Plugin 'Shougo/neocomplete'
 Plugin 'tpope/vim-surround'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -151,6 +152,17 @@ let g:tagbar_show_linenumbers = 1
 """ setting for YouCompleteMe
 noremap <F3> :YcmCompleter GetDoc<Return> " short cut for get document
 noremap <F4> :YcmCompleter GoToDeclaration<Return> " short cut for go to declaration
+
+""" setting for neocomplete
+let g:neocomplete#enable_at_startup = 1
+" <TAB>: completion for neocomplete.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" :
+    \ <SID>check_back_space() ? "\<TAB>" :
+    \ neocomplete#start_manual_complete()
+function! s:check_back_space() "{{{
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+endfunction"}}}
 
 """ setting for tags
 set tags=./tags,tags;/
