@@ -1,6 +1,8 @@
 
 """"""""""" common setting """""""""""""""
 
+" Fix backspace problem
+set backspace=indent,eol,start
 set nocompatible              " nocompatible with vi. This means Vim will use Vim defaults
 set t_Co=256               " set the number of colors. This setting will be used for some plugins
 set number              " always show the line number
@@ -16,6 +18,7 @@ set smartindent
 
 " encoding set
 set encoding=utf-8
+set termencoding=utf8
 " seting for baidu-speech linux server (files encoded with gbk are often used,
 " but vim ofen detect it wrongly)
 nnoremap <F7> :e ++enc=gbk<CR>
@@ -87,8 +90,8 @@ Plugin 'taglist.vim'
 Plugin 'majutsushi/tagbar'      " better support than taglist for object oriented
 Plugin 'Yggdroot/indentLine'
 " YouCompleteMe is a plugin with a compiled component. So read the doc about how to install it correctly
-Plugin 'Valloric/YouCompleteMe'
-" Plugin 'Shougo/neocomplete'
+"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Shougo/neocomplete'
 Plugin 'tpope/vim-surround'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -166,6 +169,8 @@ endfunction"}}}
 
 """ setting for tags
 set tags=./tags,tags;/
+" Open the definition in a vertical split
+map <C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 " setting for ultisnips
 " Trigger configuration. Do not use <tab> if you use " https://github.com/Valloric/YouCompleteMe.
