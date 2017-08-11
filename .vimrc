@@ -22,6 +22,8 @@ set termencoding=utf8
 " seting for baidu-speech linux server (files encoded with gbk are often used,
 " but vim ofen detect it wrongly)
 nnoremap <F7> :e ++enc=gbk<CR>
+" Prevent that vim jumps to the next match when pressing *
+nnoremap * *``
 
 " dictionary word completion using ctrl-x ctrl-k
 set dictionary+=/usr/share/dict/words
