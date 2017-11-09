@@ -11,7 +11,7 @@ alias l='ls -lht'
 set -o vi
 
 # Set local path probably used in future
-# export LD_LIBRARY_PATH="$HOME/local/lib/"
+# export LD_LIBRARY_PATH="$HOME/local/lib/:$LD_LIBRARY_PATH"
 # export PATH="$HOME/local/bin:$PATH"
 
 # Set for CCProxy for server unable to acess Internet
