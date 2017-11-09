@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Author: Feng Yukun
-# Brief: Commands usage habits
+# Brief: Set linux shell environment
 
 
 # Alias the command
@@ -9,6 +9,15 @@ alias l='ls -lht'
 
 # Set shell command line to be vim-like
 set -o vi
+
+# Set local path probably used in future
+# export LD_LIBRARY_PATH="$HOME/local/lib/"
+# export PATH="$HOME/local/bin:$PATH"
+
+# Set for CCProxy for server unable to acess Internet
+# outer_ip=10.130.14.95:808
+# export http_proxy=$outer_ip
+# export https_proxy=$outer_ip
 
 # Set the color for ls
 
