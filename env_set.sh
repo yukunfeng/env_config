@@ -19,6 +19,9 @@ set -o vi
 # export http_proxy=$outer_ip
 # export https_proxy=$outer_ip
 
+# Useful records
+# git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
 # Set the color for ls
 
 colors_dir="${HOME}/.${USER}_dircolors"
