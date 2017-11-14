@@ -7,3 +7,14 @@ for line in $1:
 		continue
 $1.close()
 endsnippet
+
+snippet regexeg "regex examples"
+regex = re.compile(pattern)
+result = regex.search(string)
+# Equivalent to
+search_result = re.search(pattern, string)
+# Common function
+# findall(pattern, string): list (empty list if no position)
+# search(pattern, string): None if no position else return object. Search matches once.
+# for result: group(0): entire match; grou(1) first parenthesized subgroup and so on.
+endsnippet
