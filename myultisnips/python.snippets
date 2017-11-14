@@ -1,0 +1,9 @@
+snippet readfile "read file"
+${1:fh} = open(${2:file path}, "r")
+for line in $1:
+	line = line.strip()
+	# Skip empty lines
+	if line == "":
+		continue
+$1.close()
+endsnippet
