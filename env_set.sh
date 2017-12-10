@@ -55,17 +55,12 @@ function cngram() {
     done
 }
 
-# Check whether a port is in use
-function cport() {
-    port=$1
-    lsof -i -P -n | grep $port 
-}
-
 # Get scp parameter
 getscp () {
     echo $USER@$(hostname -I | perl -lane 'print $F[0]'):$(readlink -f $1)
 }
 
+# Highlight error in make's output
 # make()
 # {
   # pathpat="(/[^/]*)+:[0-9]+"

@@ -1,2 +1,1 @@
-# scripts
-Some custom scripts for my Vim configure and Linux terminal
+my vim and shell enviroment configuration
