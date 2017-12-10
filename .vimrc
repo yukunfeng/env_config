@@ -44,6 +44,9 @@ set noundofile  " stop vim from creating a "un~" file.
 "nnoremap <F5> i<C-R>=strftime("%Y-%m-%d")<Return><Esc>
 "inoremap <F5> <C-R>=strftime("%Y-%m-%d")<Return>
 
+" Autoformart
+noremap <F5> :Autoformat<CR>
+
 " remove all trailing whitespace by pressing F6
 nnoremap <F6> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:noh<CR>
 
@@ -97,6 +100,10 @@ Plugin 'Shougo/neocomplete'
 Plugin 'tpope/vim-surround'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+" Autoformart
+" Install autopep8 by pip for python code style: pip install --upgrade autopep8
+" Install astyle or clang-format (I choose astyle)
+Plugin 'Chiel92/vim-autoformat'
 
 
 " All of your Plugins must be added before the following line
