@@ -18,7 +18,7 @@ set smartindent
 
 " encoding set
 set encoding=utf-8
-set termencoding=utf8
+set termencoding=gbk
 " seting for baidu-speech linux server (files encoded with gbk are often used,
 " but vim ofen detect it wrongly)
 nnoremap <F7> :e ++enc=gbk<CR>
@@ -104,6 +104,7 @@ Plugin 'honza/vim-snippets'
 " Install autopep8 by pip for python code style: pip install --upgrade autopep8
 " Install astyle or clang-format (I choose astyle)
 Plugin 'Chiel92/vim-autoformat'
+Plugin 'morhetz/gruvbox'
 
 
 " All of your Plugins must be added before the following line
@@ -114,9 +115,10 @@ filetype plugin on
 
 """ setting for solarized
 syntax enable
-"set background=light     " solarized color has two theme: dark and light
+" set background=light     " solarized color has two theme: dark and light
 set background=dark     " solarized color has two theme: dark and light
-colorscheme solarized
+" colorscheme solarized
+colorscheme gruvbox
 
 """ setting for powerline
 set laststatus=2   " Always show the statusline
@@ -189,30 +191,4 @@ let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsSnippetDirectories=["myultisnips", "UltiSnips"]
-
-
-" setting for cscope. Parts of the script come from http://cscope.sourceforge.net/cscope_maps.vim
-if has("cscope")
-    " look for cscope file everywhere starting from the current directory up to the root.
-    function! LoadCscope()
-        let db = findfile("cscope.out", ".;")
-        if (!empty(db))
-            let path = strpart(db, 0, match(db, "/cscope.out$"))
-            set nocscopeverbose " suppress 'duplicate connection' error
-            exe "cs add " . db . " " . path
-            set cscopeverbose
-        endif
-    endfunction
-    au BufEnter /* call LoadCscope()
-
-    nmap ,fs :cs find s <C-R>=expand("<cword>")<CR><CR> " 's' symbol: find all references to the token under cursor
-    nmap ,fg :cs find g <C-R>=expand("<cword>")<CR><CR> " 'g' global: find global definition(s) of the token under cursor
-    nmap ,fc :cs find c <C-R>=expand("<cword>")<CR><CR> " 'c' calls:  find all calls to the function name under cursor
-    nmap ,ft :cs find t <C-R>=expand("<cword>")<CR><CR> " 't' text:   find all instances of the text under cursor
-    nmap ,fe :cs find e <C-R>=expand("<cword>")<CR><CR> " 'e' egrep:  egrep search for the word under cursor
-    nmap ,ff :cs find f <C-R>=expand("<cfile>")<CR><CR> " 'f' file:   open the filename under cursor
-    nmap ,fi :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR> " 'i' includes: find files that include the filename under cursor
-    nmap ,fd :cs find d <C-R>=expand("<cword>")<CR><CR> " 'd' called: find functions that function under cursor calls
-
-endif
 
