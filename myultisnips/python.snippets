@@ -3,7 +3,7 @@ ${1:fh} = open(${2:file path}, "r")
 for line in $1:
 	line = line.strip()
 	# Skip empty lines
-	if line == "":
+	if line:
 		continue
 $1.close()
 endsnippet
@@ -13,7 +13,7 @@ with open(${1:file path}, 'r') as ${2:fh}:
 	for line in $2:
 		line = line.strip()
 		# Skip empty lines
-		if line == "":
+		if line:
 			continue
 endsnippet
 
@@ -49,7 +49,7 @@ import fileinput
 for line in fileinput.input():
 	line = line.strip()
 	# Skip empty lines
-	if line == "":
+	if line:
 		continue
 # Or
 import sys
