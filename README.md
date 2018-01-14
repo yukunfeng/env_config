@@ -1,1 +1,1 @@
-my vim and shell enviroment configuration
+My vim and shell environment configuration

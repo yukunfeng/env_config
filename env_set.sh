@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Author: Feng Yukun
+# Author: Yukun Feng
 # Brief: Set linux shell environment
 
 
@@ -59,15 +59,3 @@ function cngram() {
 getscp () {
     echo $USER@$(hostname -I | perl -lane 'print $F[0]'):$(readlink -f $1)
 }
-
-# Highlight error in make's output
-# make()
-# {
-  # pathpat="(/[^/]*)+:[0-9]+"
-  # ccred=$(echo -e "\033[0;31m")
-  # ccyellow=$(echo -e "\033[0;33m")
-  # ccend=$(echo -e "\033[0m")
-  # /usr/bin/make "$@" 2>&1 | sed -r -e "/[Ee]rror[: ]/ s%$pathpat%$ccred&$ccend%g" -e "/[Ww]arning[: ]/ s%$pathpat%$ccyellow&$ccend%g"
-  # return ${PIPESTATUS[0]}
-# }
-
