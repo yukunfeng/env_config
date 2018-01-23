@@ -62,6 +62,9 @@ let &tw=column_limit     " automatic word wrapping at column_limit. Set 0 to sto
 " au BufWinEnter * let w:m2=matchadd('Underlined', '\%>' . 80 . 'v.\+', -1)    " this will high light when a column exceeds 80
 noremap <F9> :set wrap!<CR>
 
+" map for tabs
+noremap <F10> :tabn<CR>
+
 " short cut for change windows
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j       " nerd tree has mapped it, so when in nerd tree window, this short cut will not work
