@@ -18,7 +18,7 @@ set smartindent
 
 " encoding set
 set encoding=utf-8
-set termencoding=gbk
+set termencoding=utf-8
 " seting for baidu-speech linux server (files encoded with gbk are often used,
 " but vim ofen detect it wrongly)
 nnoremap <F7> :e ++enc=gbk<CR>
@@ -90,7 +90,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-scripts/a.vim'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'Lokaltog/vim-powerline'
+" Plugin 'Lokaltog/vim-powerline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'jiangmiao/auto-pairs'
@@ -120,11 +120,12 @@ filetype plugin on
 syntax enable
 " set background=light     " solarized color has two theme: dark and light
 set background=dark     " solarized color has two theme: dark and light
-" colorscheme solarized
-colorscheme gruvbox
+colorscheme solarized
+" colorscheme gruvbox
 
 """ setting for powerline
-set laststatus=2   " Always show the statusline
+set laststatus=0   " Always show the statusline
+" set laststatus=2   " Always show the statusline
 let g:Powerline_theme = 'default'
 if &background=='light'
     let g:Powerline_colorscheme = 'solarized'
@@ -160,8 +161,8 @@ let g:indentLine_char = '┊'
 
 """ setting for tag bar
 noremap tb :TagbarToggle<Return>
-"let g:tagbar_width=30   " width of tagbar
-let g:tagbar_width=50   " width of tagbar for wide screen in baidu speech
+let g:tagbar_width=30   " width of tagbar
+" let g:tagbar_width=50   " width of tagbar for wide screen in baidu speech
 let g:tagbar_left=0     " tagbar window on the left(1 on the right)
 let g:tagbar_sort = 0   " tags are sorted according to their order in the source file
 let g:tagbar_show_linenumbers = 1

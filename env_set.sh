@@ -24,16 +24,16 @@ set -o vi
 
 # Set the color for ls
 
-colors_dir="${HOME}/.${USER}_dircolors"
-color_file="dircolors.ansi-dark"
-if [ -d "$colors_dir" ] ; then
-    eval `dircolors ${colors_dir}/${color_file}`
-else
+# colors_dir="${HOME}/.${USER}_dircolors"
+# color_file="dircolors.ansi-dark"
+# if [ -d "$colors_dir" ] ; then
+   # eval `dircolors ${colors_dir}/${color_file}`
+# else
     # Create dir and download dircolors
-    mkdir ${colors_dir}
-    git clone https://github.com/seebi/dircolors-solarized.git ${colors_dir}
-    eval `dircolors ${colors_dir}/${color_file}`
-fi
+   # mkdir ${colors_dir}
+   # git clone https://github.com/seebi/dircolors-solarized.git ${colors_dir}
+   # eval `dircolors ${colors_dir}/${color_file}`
+# fi
 
 # Function
 
