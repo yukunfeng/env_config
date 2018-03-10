@@ -10,6 +10,9 @@ alias l='ls -lht'
 # Set shell command line to be vim-like
 set -o vi
 
+# Set LANG
+export LANG=zh_CN.GBK
+
 # Set local path probably used in future
 # export LD_LIBRARY_PATH="$HOME/local/lib/:$LD_LIBRARY_PATH"
 # export PATH="$HOME/local/bin:$PATH"
