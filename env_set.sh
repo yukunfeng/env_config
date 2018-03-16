@@ -62,3 +62,11 @@ function cngram() {
 getscp () {
     echo $USER@$(hostname -I | perl -lane 'print $F[0]'):$(readlink -f $1)
 }
+
+# Print average of numbers from a file or stdin
+avg () {
+    while read line
+    do
+        perl -lne 'BEGIN{$sum=0; $c=0} END{print $sum/$c} next if /^$/; $sum += $_;$c+=1' $line
+    done < "${1:-/dev/stdin}"
+}
