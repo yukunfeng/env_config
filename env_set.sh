@@ -14,6 +14,7 @@ set -o vi
 # Set LANG
 # export LANG=zh_CN.GBK
 # export LANG=en_US.UTF-8
+# export LANGUAGE=en_US
 
 # Set local path probably used in future
 # export LD_LIBRARY_PATH="$HOME/local/lib/:$LD_LIBRARY_PATH"
