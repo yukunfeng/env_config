@@ -6,6 +6,7 @@
 
 # Alias the command
 alias l='ls -lht'
+alias ll='ls -lht'
 
 # Set shell command line to be vim-like
 set -o vi
