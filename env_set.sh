@@ -3,6 +3,15 @@
 # Author: Yukun Feng
 # Brief: Set linux shell environment
 
+# To check the os name of current shell
+unameOut="$(uname -s)"
+case "${unameOut}" in
+    Linux*)     machine=Linux;;
+    Darwin*)    machine=Mac;;
+    CYGWIN*)    machine=Cygwin;;
+    MINGW*)     machine=MinGw;;
+    *)          machine="UNKNOWN:${unameOut}"
+esac
 
 # Alias the command
 alias l='ls -lht'
@@ -17,10 +26,12 @@ set -o vi
 # export LANGUAGE=en_US
 
 # Set for macos
+# coloring output from ls for mac
+if [[ $machine=="Mac" ]]; then
+    export CLICOLOR=1;
+    export LSCOLORS=exfxcxdxbxegedabagacad;
+fi
 
-# coloring output from ls
-# export CLICOLOR=1;
-# export LSCOLORS=exfxcxdxbxegedabagacad;
 
 # Set local path probably used in future
 # export LD_LIBRARY_PATH="$HOME/local/lib/:$LD_LIBRARY_PATH"
@@ -68,9 +79,15 @@ function cngram() {
 }
 
 # Get scp parameter
-getscp () {
-    echo $USER@$(hostname -I | perl -lane 'print $F[0]'):$(readlink -f $1)
-}
+if [[ $machine=="mac" ]]; then
+    getscp () {
+        echo $USER@$(ipconfig getifaddr en1):$(pwd)/$1
+    }
+else
+    getscp () {
+        echo $USER@$(hostname -I | perl -lane 'print $F[0]'):$(readlink -f $1)
+    }
+fi
 
 # Print average of numbers from a file or stdin
 avg () {
