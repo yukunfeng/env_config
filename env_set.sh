@@ -78,10 +78,15 @@ function cngram() {
     done
 }
 
-# Get scp parameter
 if [[ $machine=="mac" ]]; then
+    # Get scp parameter
     getscp () {
         echo $USER@$(ipconfig getifaddr en1):$(pwd)/$1
+    }
+
+    # Copy to clicpboard (tcb) from remote server
+    tcb () {
+        ssh fengyukun@192.168.0.162 pbcopy
     }
 else
     getscp () {
