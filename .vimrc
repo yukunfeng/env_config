@@ -7,7 +7,7 @@ set nocompatible              " nocompatible with vi. This means Vim will use Vi
 set t_Co=256               " set the number of colors. This setting will be used for some plugins
 set number              " always show the line number
 set mouse=v             " enable the mouse. this allows the mouse copy the content of the screen
-set cursorline              " highlight the screen line of the cursor
+set nocursorline              " highlight the screen line of the cursor
 set hlsearch              " hight the search result
 set nofoldenable              " no folding when opening a file
 set foldmethod=indent          " set the fold method
@@ -15,6 +15,11 @@ set foldmethod=indent          " set the fold method
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 set autoindent        " copy indent from current line when starting a new line
 set smartindent
+
+" show line number and column number
+set ruler
+" Disable syntax hightlighting for speeding up vim
+set synmaxcol=120
 
 " encoding set
 set encoding=utf-8
