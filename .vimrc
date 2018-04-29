@@ -7,7 +7,8 @@ set nocompatible              " nocompatible with vi. This means Vim will use Vi
 set t_Co=256               " set the number of colors. This setting will be used for some plugins
 set number              " always show the line number
 set mouse=v             " enable the mouse. this allows the mouse copy the content of the screen
-set nocursorline              " highlight the screen line of the cursor
+set cursorline              " highlight the screen line of the cursor
+nnoremap <F3> :set nocursorline<CR>
 set hlsearch              " hight the search result
 set nofoldenable              " no folding when opening a file
 set foldmethod=indent          " set the fold method
@@ -173,8 +174,8 @@ let g:tagbar_sort = 0   " tags are sorted according to their order in the source
 let g:tagbar_show_linenumbers = 1
 
 """ setting for YouCompleteMe
-noremap <F3> :YcmCompleter GetDoc<Return> " short cut for get document
-noremap <F4> :YcmCompleter GoToDeclaration<Return> " short cut for go to declaration
+" noremap <F3> :YcmCompleter GetDoc<Return> " short cut for get document
+" noremap <F4> :YcmCompleter GoToDeclaration<Return> " short cut for go to declaration
 
 """ setting for neocomplete
 let g:neocomplete#enable_at_startup = 1
