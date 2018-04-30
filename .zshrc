@@ -1,13 +1,13 @@
 
 # Path to your oh-my-zsh installation.
 # sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-export ZSH=/Users/fengyukun/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # ZSH_THEME="refined"
-# ZSH_THEME="robbyrussell"
+ZSH_THEME="robbyrussell"
 # ZSH_THEME="avit"
-ZSH_THEME="agnoster"
-DEFAULT_USER="fengyukun"
+# ZSH_THEME="agnoster"
+DEFAULT_USER="$USER"
 # ZSH_THEME="ys"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
@@ -81,7 +81,7 @@ export LANG=en_US.UTF-8
 
 # Set for macos
 # coloring output from ls for mac
-if [[ $machine=="Mac" ]]; then
+if [ "$machine" = "Mac" ]; then
     # brew install coreutils at first
     # Or simply use following line if gls is not available
     # export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
@@ -143,7 +143,7 @@ function cngram() {
     done
 }
 
-if [[ $machine=="mac" ]]; then
+if [ "$machine" = "Mac" ]; then
     # Get scp parameter
     getscp () {
         echo $USER@$(ipconfig getifaddr en1):$(pwd)/$1
