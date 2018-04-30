@@ -1,3 +1,6 @@
+# Set local path probably used in future
+export LD_LIBRARY_PATH="$HOME/local/lib/:$LD_LIBRARY_PATH"
+export PATH="$HOME/local/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 # sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
@@ -25,27 +28,41 @@ DEFAULT_USER="$USER"
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
 
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+# Would you like to use another custom folder than $ZSH/custom?
+ZSH_CUSTOM=$HOME/.oh-my-zsh/custom/
+
+
+# Install plugins manually
+
+# zsh-autosuggestions
+if [ ! -d "${ZSH_CUSTOM}/plugins/zsh-autosuggestions" ] ; then
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM}/plugins/zsh-autosuggestions
+fi
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # HIST_STAMPS="mm/dd/yyyy"
 
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  autojump
+  z
+  extract
+  zsh-autosuggestions
+  history-substring-search
 )
 
 source $ZSH/oh-my-zsh.sh
+
+# configuration for plugins
+
+# Comment this will cause unseen completion due to same background color
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=6'
+
+# Eanble fuzzy search
+HISTORY_SUBSTRING_SEARCH_FUZZY='whateveryouwant'
 
 # Fix vim tab error
 # rm -rf ~/.antigen/.zcomp*
@@ -73,6 +90,9 @@ esac
 
 # Set shell command line to be vim-like
 set -o vi
+# Restore incremental search
+bindkey -v
+bindkey '^R' history-incremental-search-backward
 
 # Set LANG
 # export LANG=zh_CN.GBK
@@ -94,10 +114,6 @@ else
     alias ll='l'
 fi
 
-
-# Set local path probably used in future
-export LD_LIBRARY_PATH="$HOME/local/lib/:$LD_LIBRARY_PATH"
-export PATH="$HOME/local/bin:$PATH"
 
 # Set for CCProxy for server unable to acess Internet
 # outer_ip=10.130.14.95:808
@@ -149,13 +165,13 @@ if [ "$machine" = "Mac" ]; then
         echo $USER@$(ipconfig getifaddr en1):$(pwd)/$1
     }
 
+    # Copy to clicpboard (tcb) from remote server
+    tcb () {
+        ssh fengyukun@192.168.0.162 pbcopy
+    }
 else
     getscp () {
         echo $USER@$(hostname -I | perl -lane 'print $F[0]'):$(readlink -f $1)
-    }
-    # Copy to clicpboard (tcb) from remote server
-    tcb () {
-        ssh fengyukun@ pbcopy
     }
 fi
 
