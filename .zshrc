@@ -10,9 +10,9 @@ export PATH="$HOME/local/bin:$PATH"
 export ZSH=$HOME/.oh-my-zsh
 
 # ZSH_THEME="refined"
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussell"
 # ZSH_THEME="avit"
-# ZSH_THEME="agnoster"
+ZSH_THEME="agnoster"
 DEFAULT_USER="$USER"
 # ZSH_THEME="ys"
 
