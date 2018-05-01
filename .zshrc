@@ -1,3 +1,6 @@
+# Set shell command line to be vim-like
+set -o vi
+
 # Set local path probably used in future
 export LD_LIBRARY_PATH="$HOME/local/lib/:$LD_LIBRARY_PATH"
 export PATH="$HOME/local/bin:$PATH"
@@ -50,8 +53,8 @@ plugins=(
   git
   z
   extract
-  zsh-autosuggestions
   history-substring-search
+  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -60,9 +63,12 @@ source $ZSH/oh-my-zsh.sh
 
 # Comment this will cause unseen completion due to same background color
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=6'
+# ctrl + f to accept suggestions
+bindkey '^F' autosuggest-accept
 
 # Eanble fuzzy search
 HISTORY_SUBSTRING_SEARCH_FUZZY='whateveryouwant'
+
 
 # Fix vim tab error
 # rm -rf ~/.antigen/.zcomp*
@@ -88,11 +94,9 @@ case "${unameOut}" in
 esac
 
 
-# Set shell command line to be vim-like
-set -o vi
 # Restore incremental search
-bindkey -v
-bindkey '^R' history-incremental-search-backward
+# bindkey -v
+# bindkey '^R' history-incremental-search-backward
 
 # Set LANG
 # export LANG=zh_CN.GBK
