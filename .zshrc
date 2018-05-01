@@ -1,6 +1,3 @@
-# Set shell command line to be vim-like
-set -o vi
-
 # Set local path probably used in future
 export LD_LIBRARY_PATH="$HOME/local/lib/:$LD_LIBRARY_PATH"
 export PATH="$HOME/local/bin:$PATH"
@@ -60,6 +57,9 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # configuration for plugins
+
+# Set shell command line to be vim-like
+set -o vi
 
 # Comment this will cause unseen completion due to same background color
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=6'
