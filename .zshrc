@@ -132,15 +132,15 @@ fi
 colors_dir="${HOME}/.dircolors"
 color_file="dircolors.ansi-dark"
 if [ -d "$colors_dir" ] ; then
-   eval `dircolors ${colors_dir}/${color_file} &>/dev/null`
-   eval `gdircolors ${colors_dir}/${color_file} &>/dev/null`
+   eval `dircolors ${colors_dir}/${color_file}`
+   eval `gdircolors ${colors_dir}/${color_file}`
 
 else
     # Create dir and download dircolors
    mkdir ${colors_dir}
    git clone https://github.com/seebi/dircolors-solarized.git ${colors_dir}
-   eval `dircolors ${colors_dir}/${color_file} &>/dev/null`
-   eval `gdircolors ${colors_dir}/${color_file} &>/dev/null`
+   eval `dircolors ${colors_dir}/${color_file}`
+   eval `gdircolors ${colors_dir}/${color_file}`
 fi
 
 # Function
