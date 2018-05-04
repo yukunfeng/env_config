@@ -8,6 +8,7 @@ set t_Co=256               " set the number of colors. This setting will be used
 set number              " always show the line number
 set mouse=v             " enable the mouse. this allows the mouse copy the content of the screen
 set cursorline              " highlight the screen line of the cursor
+" set cursorcolumn
 nnoremap <F3> :set nocursorline<CR>
 set hlsearch              " hight the search result
 set nofoldenable              " no folding when opening a file
@@ -49,9 +50,6 @@ set noundofile  " stop vim from creating a "un~" file.
 " insert timestamp (now inserting the timestamp can be done by Ultisnips)
 "nnoremap <F5> i<C-R>=strftime("%Y-%m-%d")<Return><Esc>
 "inoremap <F5> <C-R>=strftime("%Y-%m-%d")<Return>
-
-" Autoformart
-noremap <F5> :Autoformat<CR>
 
 " remove all trailing whitespace by pressing F6
 nnoremap <F6> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:noh<CR>
@@ -100,7 +98,7 @@ Plugin 'Lokaltog/vim-powerline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'taglist.vim'
+" Plugin 'taglist.vim'
 Plugin 'majutsushi/tagbar'      " better support than taglist for object oriented
 Plugin 'Yggdroot/indentLine'
 " YouCompleteMe is a plugin with a compiled component. So read the doc about how to install it correctly
@@ -109,11 +107,9 @@ Plugin 'Shougo/neocomplete'
 Plugin 'tpope/vim-surround'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-" Autoformart
-" Install autopep8 by pip for python code style: pip install --upgrade autopep8
-" Install astyle or clang-format (I choose astyle)
-Plugin 'Chiel92/vim-autoformat'
 Plugin 'morhetz/gruvbox'
+Plugin 'justinmk/vim-sneak'
+Plugin 'haya14busa/incsearch.vim'
 
 
 " All of your Plugins must be added before the following line
@@ -161,6 +157,11 @@ let Tlist_Use_Right_Window=1    " tag list window on the right(0 on the left)
 let Tlist_WinWidth=30        " the width of tag list window
 let Tlist_Exit_OnlyWindow=1     " quit if only list tag window left
 let Tlist_File_Fold_Auto_Close=1    " auto fold
+
+""" setting for incsearch
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
 
 """ setting for indentLine
 let g:indentLine_char = '┊'
