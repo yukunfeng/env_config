@@ -99,9 +99,11 @@ esac
 # bindkey '^R' history-incremental-search-backward
 
 # Set LANG
-# export LANG=zh_CN.GBK
+# zh_CN.GBK for Chinese
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
 export LANG=en_US.UTF-8
-# export LANGUAGE=en_US
 
 # Set for macos
 # coloring output from ls for mac
@@ -118,6 +120,31 @@ else
     alias ll='l'
 fi
 
+# Setting for pyenv
+if [ -e "$HOME/.pyenv" ]; then
+    export PATH="$PYENV_ROOT/bin:$PATH"
+    export PYENV_ROOT="$HOME/.pyenv"
+    if command -v pyenv 1>/dev/null 2>&1; then
+      eval "$(pyenv init -)"
+    fi
+    # Setting python version
+    # pyenv shell 3.6.5
+    pyenv shell anaconda3-5.1.0
+    # pyenv shell 2.7.15
+fi
+
+# Export cuda related lib if it exists
+if [ -e "/usr/local/cuda" ]; then
+    ## CUDA and cuDNN paths
+    export PATH=/usr/local/cuda/bin:$PATH
+    export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+    export CUDA_PATH=/usr/local/cuda
+
+    #cudnn
+    export CFLAGS=-I/usr/local/cudnn/include
+    export LDFLAGS=-L/usr/local/cudnn/lib64
+    export LD_LIBRARY_PATH=/usr/local/cudnn/lib64:$LD_LIBRARY_PATH
+fi
 
 # Set for CCProxy for server unable to acess Internet
 # outer_ip=10.130.14.95:808

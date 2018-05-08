@@ -22,3 +22,8 @@ if [ ! $? -eq 0 ]; then
     exit 1
 fi
 endsnippet
+
+snippet fileexist "file exist"
+if [ -e ${1:filename} ]; then
+fi
+endsnippet
