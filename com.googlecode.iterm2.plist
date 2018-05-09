@@ -63,13 +63,13 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>-1373 328 620 392 -1920 -280 1920 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>256 153 796 473 0 0 1280 777 </string>
+	<string>320 253 918 452 0 0 1280 777 </string>
 	<key>NSWindow Frame com.apple.typography_panel_Monaco</key>
 	<string>-1360 415 260 88 -1920 -280 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 68 1280 709 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>418 112 730 600 0 0 1280 777 </string>
+	<string>-1016 9 730 600 -1920 -280 1920 1057 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -736,7 +736,7 @@
 			<key>Thin Strokes</key>
 			<integer>3</integer>
 			<key>Transparency</key>
-			<real>0.042812103426395944</real>
+			<real>0.024234612944162438</real>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
@@ -1406,7 +1406,11 @@
 	<key>NoSyncInstallationId</key>
 	<string>63582182-CAFF-423F-81CD-EF570729BE91</string>
 	<key>NoSyncLastTipTime</key>
-	<real>547168969.55028605</real>
+	<real>547448082.28892303</real>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
+	<true/>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
+	<integer>0</integer>
 	<key>NoSyncPermissionToShowTip</key>
 	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
@@ -1424,6 +1428,8 @@
 		<string>0007</string>
 		<string>0008</string>
 		<string>0009</string>
+		<string>0010</string>
+		<string>0011</string>
 	</array>
 	<key>PointerActions</key>
 	<dict>
@@ -1471,7 +1477,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-05-04T05:13:11Z</date>
+	<date>2018-05-07T04:29:55Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
