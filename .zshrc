@@ -114,10 +114,14 @@ if [ "$machine" = "Mac" ]; then
     alias l='gls -htl --color=auto'
     alias ll='l'
     alias ls='gls --color=auto'
+    alias cc='pbcopy'
+    alias vv='pbpaste'
 else
     # Alias the command for linux
     alias l='ls -lht --color=auto'
     alias ll='l'
+    alias cc='xclip -selection clipboard'
+    alias vv='xclip -selection clipboard -o'
 fi
 
 # Setting for pyenv
