@@ -47,12 +47,13 @@ set smartcase   " override the 'ignorecase' option if the search pattern contain
 
 set noundofile  " stop vim from creating a "un~" file.
 
+autocmd FileType python map <buffer> <F6> :call Flake8()<CR>
 " insert timestamp (now inserting the timestamp can be done by Ultisnips)
 "nnoremap <F5> i<C-R>=strftime("%Y-%m-%d")<Return><Esc>
 "inoremap <F5> <C-R>=strftime("%Y-%m-%d")<Return>
 
 " remove all trailing whitespace by pressing F6
-nnoremap <F6> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:noh<CR>
+" nnoremap <F6> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:noh<CR>
 
 " 79 column layout concerns
 let column_limit=99
@@ -94,7 +95,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-scripts/a.vim'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'Lokaltog/vim-powerline'
+" Plugin 'Lokaltog/vim-powerline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'jiangmiao/auto-pairs'
@@ -110,6 +111,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'morhetz/gruvbox'
 Plugin 'justinmk/vim-sneak'
 Plugin 'haya14busa/incsearch.vim'
+Plugin 'nvie/vim-flake8'
 
 
 " All of your Plugins must be added before the following line

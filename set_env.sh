@@ -7,4 +7,5 @@
 # Description:	 Copy .vimrc, .zshrc and snippts to home
 # ----------------------------------------------------------------------
 
-cp -r .vimrc .zshrc myultisnips $HOME/.vim
+cp -r myultisnips $HOME/.vim
+cp .vimrc .zshrc $HOME
