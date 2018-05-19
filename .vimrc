@@ -112,6 +112,7 @@ Plugin 'morhetz/gruvbox'
 Plugin 'justinmk/vim-sneak'
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'nvie/vim-flake8'
+Plugin 'w0rp/ale'
 
 
 " All of your Plugins must be added before the following line
