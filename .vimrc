@@ -206,3 +206,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsSnippetDirectories=["myultisnips", "UltiSnips"]
 
+" setting for vim-command mode completion
+set wildmenu "" using tab to navigate through files
+set wildmode=list:longest,list:full "" tab at first, only print file list
