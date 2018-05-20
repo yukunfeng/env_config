@@ -22,10 +22,17 @@ regex = re.compile(pattern)
 result = regex.search(string)
 # Equivalent to
 search_result = re.search(pattern, string)
+
 # Common function
 # findall(pattern, string): list (empty list if no position)
 # search(pattern, string): None if no position else return object. Search matches once.
 # for result: group(0): entire match; grou(1) first parenthesized subgroup and so on.
+
+# replace:
+# result = re.sub('abc',  'def', input)           # Replace pattern abc -> def
+# backrefernces, the whole pattern will be replaced. If want to keep some part, just group it.
+# result = re.sub("(\d+) (\w+)", r"\2 \1")
+# usually use re.subn to return (new_string, number_of_subs_made).
 endsnippet
 
 snippet argparse "argument parse"
