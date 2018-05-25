@@ -114,14 +114,14 @@ if [ "$machine" = "Mac" ]; then
     alias l='gls -htl --color=auto'
     alias ll='l'
     alias ls='gls --color=auto'
-    alias cc='pbcopy'
-    alias vv='pbpaste'
+    alias ccc='pbcopy'
+    alias vvv='pbpaste'
 else
     # Alias the command for linux
     alias l='ls -lht --color=auto'
     alias ll='l'
-    alias cc='xclip -selection clipboard'
-    alias vv='xclip -selection clipboard -o'
+    alias ccc='xclip -selection clipboard'
+    alias vvv='xclip -selection clipboard -o'
 fi
 
 # Setting for pyenv
@@ -200,17 +200,23 @@ if [ "$machine" = "Mac" ]; then
         echo $USER@$(ipconfig getifaddr en1):$(pwd)/$1
     }
 
+    # remote copy (rcopy)
+    rcopy () {
+        # $SSH_CLIENT or $SSH_CONNECTION
+        ssh fengyukun@$(echo $SSH_CLIENT | perl -lane 'print $F[0]') 'pbcopy'
+    }
+
 else
     getscp () {
         echo $USER@$(hostname -I | perl -lane 'print $F[0]'):$(readlink -f $1)
     }
+
+    # remote copy (rcopy)
+    rcopy () {
+        ssh fengyukun@$(echo $SSH_CLIENT | perl -lane 'print $F[0]') 'xclip -selection clipboard'
+    }
 fi
 
-# Copy to clicpboard (tcb) from remote server
-tcb () {
-    # $SSH_CLIENT or $SSH_CONNECTION
-    ssh fengyukun@$(echo $SSH_CLIENT | perl -lane 'print $F[0]') 'pbcopy'
-}
 
 # Print average of numbers from a file or stdin
 avg () {
