@@ -200,15 +200,17 @@ if [ "$machine" = "Mac" ]; then
         echo $USER@$(ipconfig getifaddr en1):$(pwd)/$1
     }
 
-    # Copy to clicpboard (tcb) from remote server
-    tcb () {
-        ssh fengyukun@192.168.0.162 pbcopy
-    }
 else
     getscp () {
         echo $USER@$(hostname -I | perl -lane 'print $F[0]'):$(readlink -f $1)
     }
 fi
+
+# Copy to clicpboard (tcb) from remote server
+tcb () {
+    # $SSH_CLIENT or $SSH_CONNECTION
+    ssh fengyukun@$(echo $SSH_CLIENT | perl -lane 'print $F[0]') 'pbcopy'
+}
 
 # Print average of numbers from a file or stdin
 avg () {
