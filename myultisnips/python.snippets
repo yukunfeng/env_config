@@ -1,5 +1,5 @@
 snippet readfile "read file"
-${1:fh} = open(${2:file path}, "r")
+${1:fh} = open(${2:file_path}, "r")
 for line in $1:
 	line = line.strip()
 	# Skip empty lines
@@ -9,7 +9,7 @@ $1.close()
 endsnippet
 
 snippet readfilew "read file with statement"
-with open(${1:file path}, 'r') as ${2:fh}:
+with open(${1:file_path}, 'r') as ${2:fh}:
 	for line in $2:
 		line = line.strip()
 		# Skip empty lines
