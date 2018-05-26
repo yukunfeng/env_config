@@ -113,6 +113,7 @@ Plugin 'justinmk/vim-sneak'
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'w0rp/ale'
+Plugin 'junegunn/vim-easy-align'
 
 
 " All of your Plugins must be added before the following line
@@ -209,3 +210,10 @@ let g:UltiSnipsSnippetDirectories=["myultisnips", "UltiSnips"]
 " setting for vim-command mode completion
 set wildmenu "" using tab to navigate through files
 set wildmode=list:longest,list:full "" tab at first, only print file list
+
+" setting for EasyAlign
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
