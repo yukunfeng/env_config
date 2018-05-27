@@ -19,6 +19,7 @@ set autoindent        " copy indent from current line when starting a new line
 set smartindent
 
 " hidden showing feature in markdown or latex files
+" verbose set conceallevel to check which plugin change this value last
 set conceallevel=0
 
 " show line number and column number
