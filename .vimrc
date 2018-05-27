@@ -172,6 +172,10 @@ map g/ <Plug>(incsearch-stay)
 
 """ setting for indentLine
 let g:indentLine_char = '┊'
+" avoiding IndentLine to start for Markdown and tex files
+" this is because IndentLine will set conceallevel to 2 by default which makes mk or tex files hard to read
+autocmd FileType markdown let g:indentLine_enabled=0
+autocmd FileType tex let g:indentLine_enabled=0
 
 """ setting for tag bar
 noremap tb :TagbarToggle<Return>
