@@ -18,6 +18,9 @@ nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 set autoindent        " copy indent from current line when starting a new line
 set smartindent
 
+" hidden showing feature in markdown or latex files
+set conceallevel=0
+
 " show line number and column number
 set ruler
 " Disable syntax hightlighting for speeding up vim
@@ -216,6 +219,3 @@ set wildmode=list:longest,list:full "" tab at first, only print file list
 xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
-
-" hidden showing feature in markdown or latex files
-set conceallevel=0
