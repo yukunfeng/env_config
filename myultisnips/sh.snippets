@@ -27,3 +27,11 @@ snippet fileexist "file exist"
 if [ -e ${1:filename} ]; then
 fi
 endsnippet
+
+snippet streq "string equal"
+if [ "${1:}" = "${2:}" ]; then
+	${3:statement}
+else
+	${4:statement}
+fi
+endsnippet
