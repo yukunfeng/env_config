@@ -116,6 +116,7 @@ if [ "$machine" = "Mac" ]; then
     alias ls='gls --color=auto'
     alias ccc='pbcopy'
     alias vvv='pbpaste'
+    alias shuf='gshuf'
 else
     # Alias the command for linux
     alias l='ls -lht --color=auto'
