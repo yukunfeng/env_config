@@ -86,12 +86,13 @@ zstyle ':completion:*' matcher-list '' \
 # To check the os name of current shell
 unameOut="$(uname -s)"
 case "${unameOut}" in
-    Linux*)     machine=Linux;;
-    Darwin*)    machine=Mac;;
-    CYGWIN*)    machine=Cygwin;;
-    MINGW*)     machine=MinGw;;
-    *)          machine="UNKNOWN:${unameOut}"
+    Linux*)     MY_MACHINE_TYPE=Linux;;
+    Darwin*)    MY_MACHINE_TYPE=Mac;;
+    CYGWIN*)    MY_MACHINE_TYPE=Cygwin;;
+    MINGW*)     MY_MACHINE_TYPE=MinGw;;
+    *)          MY_MACHINE_TYPE="UNKNOWN:${unameOut}"
 esac
+export MY_MACHINE_TYPE=$MY_MACHINE_TYPE
 
 
 # Restore incremental search
@@ -107,7 +108,7 @@ export LANG=en_US.UTF-8
 
 # Set for macos
 # coloring output from ls for mac
-if [ "$machine" = "Mac" ]; then
+if [ "$MY_MACHINE_TYPE" = "Mac" ]; then
     # brew install coreutils at first
     # Or simply use following line if gls is not available
     # export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
@@ -127,15 +128,15 @@ fi
 
 # Setting for pyenv
 if [ -e "$HOME/.pyenv" ]; then
-    export PATH="$PYENV_ROOT/bin:$PATH"
     export PYENV_ROOT="$HOME/.pyenv"
+    export PATH="$PYENV_ROOT/bin:$PATH"
     if command -v pyenv 1>/dev/null 2>&1; then
-      eval "$(pyenv init -)"
-    fi
-    # Setting python version
-    # pyenv shell 3.6.5
-    pyenv shell anaconda3-5.1.0
-    # pyenv shell 2.7.15
+        eval "$(pyenv init -)"
+        # Setting python version
+        pyenv shell anaconda3-5.1.0
+        # pyenv shell 3.6.5
+        # pyenv shell 2.7.15
+     fi
 fi
 
 # Export cuda related lib if it exists
@@ -164,15 +165,18 @@ fi
 colors_dir="${HOME}/.dircolors"
 color_file="dircolors.ansi-dark"
 if [ -d "$colors_dir" ] ; then
-   eval `dircolors ${colors_dir}/${color_file}`
-   eval `gdircolors ${colors_dir}/${color_file}`
+    if [ "$MY_MACHINE_TYPE" = "Mac" ]; then
+        eval `gdircolors ${colors_dir}/${color_file}`
+    else
+        eval `dircolors ${colors_dir}/${color_file}`
+    fi
 
 else
     # Create dir and download dircolors
-   mkdir ${colors_dir}
-   git clone https://github.com/seebi/dircolors-solarized.git ${colors_dir}
-   eval `dircolors ${colors_dir}/${color_file}`
-   eval `gdircolors ${colors_dir}/${color_file}`
+    mkdir ${colors_dir}
+    git clone https://github.com/seebi/dircolors-solarized.git ${colors_dir}
+    eval `dircolors ${colors_dir}/${color_file}`
+    eval `gdircolors ${colors_dir}/${color_file}`
 fi
 
 # Function
@@ -195,7 +199,7 @@ function cngram() {
     done
 }
 
-if [ "$machine" = "Mac" ]; then
+if [ "$MY_MACHINE_TYPE" = "Mac" ]; then
     # Get scp parameter
     getscp () {
         echo $USER@$(ipconfig getifaddr en1):$(pwd)/$1
