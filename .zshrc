@@ -218,6 +218,11 @@ else
     }
 fi
 
+# https://stackoverflow.com/questions/42848130/why-i-cant-access-remote-jupyter-notebook-server
+jupyter_server() {
+    jupyter notebook --no-browser --ip $(hostname -I | perl -lane 'print $F[0]') --port 8888
+}
+
 
 # Print average of numbers from a file or stdin
 avg () {
