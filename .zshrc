@@ -6,10 +6,10 @@ export PATH="$HOME/local/bin:$PATH"
 # sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 export ZSH=$HOME/.oh-my-zsh
 
-# ZSH_THEME="refined"
+ZSH_THEME="refined"
 # ZSH_THEME="robbyrussell"
 # ZSH_THEME="avit"
-ZSH_THEME="agnoster"
+# ZSH_THEME="agnoster"
 DEFAULT_USER="$USER"
 # ZSH_THEME="ys"
 
