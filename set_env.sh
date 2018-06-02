@@ -9,3 +9,4 @@
 
 cp -r myultisnips $HOME/.vim
 cp .vimrc .zshrc $HOME
+cp ./refined.zsh-theme $HOME/.oh-my-zsh/custom/themes
