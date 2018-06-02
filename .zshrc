@@ -39,6 +39,9 @@ if [ ! -d "${ZSH_CUSTOM}/plugins/zsh-autosuggestions" ] ; then
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM}/plugins/zsh-autosuggestions
 fi
 
+if [ ! -d "${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting" ] ; then
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting
+fi
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
@@ -52,6 +55,7 @@ plugins=(
   extract
   history-substring-search
   zsh-autosuggestions
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
