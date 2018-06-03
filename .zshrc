@@ -130,6 +130,7 @@ else
     alias ll='l'
     alias ccc='xclip -selection clipboard'
     alias vvv='xclip -selection clipboard -o'
+    alias open='gnome-open'
 fi
 
 # Setting for pyenv
