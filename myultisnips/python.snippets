@@ -37,10 +37,19 @@ endsnippet
 
 snippet argparse "argument parse"
 import argparse
-parser = argparse.ArgumentParser(description='Description of your program')
+parser = argparse.ArgumentParser(
+	description='Description of your program',
+	formatter_class=argparse.ArgumentDefaultsHelpFormatter
+)
 # args['foo'] is None
-parser.add_argument('-f','--foo', help='Description for foo argument', required=True)
-parser.add_argument('-b','--bar', help='Description for bar argument', required=True)
+parser.add_argument('-f', '--foo',
+					help='Description for foo argument',
+					required=True
+)
+parser.add_argument('-b', '--bar',
+					help='Description for bar argument',
+					required=True
+)
 # add default='xx' if you want
 #parser.add_argument('-b', type=int or float)
 # Setting a varable True or False
