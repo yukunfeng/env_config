@@ -26,6 +26,8 @@ set conceallevel=0
 set ruler
 " Disable syntax hightlighting for speeding up vim
 set synmaxcol=120
+" disable case-sensitive in command-line mode
+set wildignorecase
 
 " encoding set
 set encoding=utf-8
@@ -104,10 +106,14 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
-Plug 'vim-scripts/a.vim'
+
+" colorscheme
 Plug 'altercation/vim-colors-solarized'
 Plug 'KeitaNakamura/neodark.vim'
 Plug 'morhetz/gruvbox'
+Plug 'rakr/vim-one'
+
+Plug 'vim-scripts/a.vim'
 " Plug 'Lokaltog/vim-powerline'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
@@ -127,6 +133,8 @@ Plug 'nvie/vim-flake8'
 Plug 'w0rp/ale'
 Plug 'junegunn/vim-easy-align'
 Plug 'lervag/vimtex'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Initialize plugin system
 call plug#end()
@@ -139,25 +147,41 @@ call plug#end()
 filetype plugin on
 
 """ setting for solarized
+" true color setting
+if (empty($TMUX))
+  if (has("nvim"))
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
 syntax enable
-" set background=light     " solarized color has two theme: dark and light
-set background=dark     " solarized color has two theme: dark and light
-" colorscheme neodark
-" let g:neodark#use_256color = 1 " default: 0
-" let g:neodark#background = '#000000'
-" let g:neodark#use_custom_terminal_theme = 1 " default: 0
-colorscheme solarized
+" set background=light
+set background=dark
+colorscheme neodark
+" colorscheme solarized
 " colorscheme gruvbox
 
-""" setting for powerline
-set laststatus=0   " Always show the statusline
-" set laststatus=2   " Always show the statusline
-let g:Powerline_theme = 'default'
-if &background=='light'
-    let g:Powerline_colorscheme = 'solarized'
-else
-    let g:Powerline_colorscheme = 'default'
-endif
+""" setting for status line
+" set laststatus=0   " Always show the statusline
+set laststatus=2   " Always show the statusline
+let g:airline_theme='neodark'
+" let g:airline_theme='solarized'
+" let g:airline_solarized_bg='dark'
+" use powerline fonts
+let g:airline_powerline_fonts = 1
+" file encoding section
+let g:airline_section_y = ''
+" mode section
+let g:airline_section_a = ''
+
+" let g:Powerline_theme = 'default'
+" if &background=='light'
+    " let g:Powerline_colorscheme = 'solarized'
+" else
+    " let g:Powerline_colorscheme = 'default'
+" endif
 
 """ setting for nerd tree
 nnoremap <F2> :NERDTreeToggle<Return>    " make a short cut for nerd tree
