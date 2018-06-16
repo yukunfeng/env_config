@@ -90,38 +90,50 @@ endif
 
 """ setting for vundle
 
-filetype off                  " not detect the file type required for Vundle plugin
+" filetype off                  " not detect the file type required for Vundle plugin
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
+" set rtp+=~/.vim/bundle/Vundle.vim
+" call vundle#begin()
 " let Vundle manage Vundle, required for Vundle plugin
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'vim-scripts/a.vim'
-Plugin 'altercation/vim-colors-solarized'
-" Plugin 'Lokaltog/vim-powerline'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'jiangmiao/auto-pairs'
-" Plugin 'taglist.vim'
-Plugin 'majutsushi/tagbar'      " better support than taglist for object oriented
-Plugin 'Yggdroot/indentLine'
+" Plugin 'VundleVim/Vundle.vim'
+
+" for junegunn/vim-plug
+" Specify a directory for plugins
+" - For Neovim: ~/.local/share/nvim/plugged
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+
+" Make sure you use single quotes
+Plug 'vim-scripts/a.vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'KeitaNakamura/neodark.vim'
+Plug 'morhetz/gruvbox'
+" Plug 'Lokaltog/vim-powerline'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'jiangmiao/auto-pairs'
+" Plug 'taglist.vim'
+Plug 'majutsushi/tagbar'      " better support than taglist for object oriented
+Plug 'Yggdroot/indentLine'
 " YouCompleteMe is a plugin with a compiled component. So read the doc about how to install it correctly
-"Plugin 'Valloric/YouCompleteMe'
-Plugin 'Shougo/neocomplete'
-Plugin 'tpope/vim-surround'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'morhetz/gruvbox'
-Plugin 'justinmk/vim-sneak'
-Plugin 'haya14busa/incsearch.vim'
-Plugin 'nvie/vim-flake8'
-Plugin 'w0rp/ale'
-Plugin 'junegunn/vim-easy-align'
+"Plug 'Valloric/YouCompleteMe'
+Plug 'Shougo/neocomplete'
+Plug 'tpope/vim-surround'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'justinmk/vim-sneak'
+Plug 'haya14busa/incsearch.vim'
+Plug 'nvie/vim-flake8'
+Plug 'w0rp/ale'
+Plug 'junegunn/vim-easy-align'
+Plug 'lervag/vimtex'
 
+" Initialize plugin system
+call plug#end()
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
+" All of your Plugins must be added before the following line for vundle
+" call vundle#end()            " required
+
 " filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 filetype plugin on
@@ -130,6 +142,10 @@ filetype plugin on
 syntax enable
 " set background=light     " solarized color has two theme: dark and light
 set background=dark     " solarized color has two theme: dark and light
+" colorscheme neodark
+" let g:neodark#use_256color = 1 " default: 0
+" let g:neodark#background = '#000000'
+" let g:neodark#use_custom_terminal_theme = 1 " default: 0
 colorscheme solarized
 " colorscheme gruvbox
 
