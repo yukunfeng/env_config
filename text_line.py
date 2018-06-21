@@ -12,13 +12,9 @@ import re
 
 
 if __name__ == "__main__":
-    if len(sys.argv) == 1:
-        raise Exception("no parameter!")
-
     fh_list = []
-    cmd = sys.argv[1]
-    if len(sys.argv) > 2:
-        extra_params = sys.argv[2:]
+    if len(sys.argv) >= 2:
+        extra_params = sys.argv[1:]
         for file_path in extra_params:
             fh = open(file_path, 'r')
             fh_list.append(fh)
@@ -32,6 +28,7 @@ if __name__ == "__main__":
             # Skip empty lines
             if l == "":
                 continue
+            f = l.split()
 
     for fh in fh_list:
         fh.close()
