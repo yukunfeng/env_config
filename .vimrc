@@ -238,6 +238,8 @@ let g:tagbar_show_linenumbers = 1
 
 """ setting for neocomplete
 let g:neocomplete#enable_at_startup = 1
+" disable auto preview
+set completeopt-=preview
 " <TAB>: completion for neocomplete.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" :
     \ <SID>check_back_space() ? "\<TAB>" :
