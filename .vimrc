@@ -129,12 +129,13 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'justinmk/vim-sneak'
 Plug 'haya14busa/incsearch.vim'
-Plug 'nvie/vim-flake8'
+" Plug 'nvie/vim-flake8'
 Plug 'w0rp/ale'
 Plug 'junegunn/vim-easy-align'
 Plug 'lervag/vimtex'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'FooSoft/vim-argwrap'
 
 " Initialize plugin system
 call plug#end()
@@ -206,6 +207,10 @@ let Tlist_Use_Right_Window=1    " tag list window on the right(0 on the left)
 let Tlist_WinWidth=30        " the width of tag list window
 let Tlist_Exit_OnlyWindow=1     " quit if only list tag window left
 let Tlist_File_Fold_Auto_Close=1    " auto fold
+
+""" argwrap
+nnoremap ,g :ArgWrap<Return>
+
 
 """ setting for incsearch
 map /  <Plug>(incsearch-forward)
