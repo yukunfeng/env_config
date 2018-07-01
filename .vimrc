@@ -184,7 +184,8 @@ let g:airline_section_a = ''
 " endif
 
 """ setting for nerd tree
-nnoremap <F2> :NERDTreeToggle<Return>    " make a short cut for nerd tree
+" nnoremap <F2> :NERDTreeToggle<Return>    " make a short cut for nerd tree
+nnoremap <F2> :NERDTree %<Return>    " open from current file's directory
 let g:NERDTreeDirArrowExpandable = '>'    " customize arrow for nerd tree
 let g:NERDTreeDirArrowCollapsible = '-'
 
