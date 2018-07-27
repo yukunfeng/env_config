@@ -198,6 +198,10 @@ noremap ,s :call NERDComment(1, 'sexy')<Return>
 noremap ,u :call NERDComment(1, 'uncomment')<Return>
 let NERDSpaceDelims = 1        " leave a space after commentering
 
+" setting for ale
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
 """ setting for auto pairs
 " to insert one pair purely, use use Ctrl-V + pair
 
