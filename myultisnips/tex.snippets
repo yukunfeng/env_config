@@ -5,9 +5,6 @@ snippet texbegin "tex begin format"
 \setlength\parindent{0pt}
 \usepackage{graphicx} % to include figure
 
-\begin{verbatim}
-  Your text here.
-\end{verbatim}
 \begin{document}
 \end{document}
 endsnippet
@@ -19,7 +16,7 @@ endsnippet
 
 snippet verbatim "verbatim"
 \\begin{verbatim}
-  Your text here.
+  ${0:Your text here}
 \\end{verbatim}
 endsnippet
 
@@ -29,4 +26,10 @@ snippet item "itemize"
 \\setlength\\itemsep{1em}
 	\\item ${0}
 \\end{itemize}
+endsnippet
+
+snippet flushleft "flushleft"
+\\begin{flushleft}
+  ${0:Your text here}
+\\end{flushleft}
 endsnippet

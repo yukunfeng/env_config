@@ -22,13 +22,15 @@ if __name__ == "__main__":
         fh = sys.stdin
         fh_list.append(fh)
 
+    count = 0
     for fh in fh_list:
-        for l in fh:
-            l = l.strip()
+        for line in fh:
+            line = line.strip()
             # Skip empty lines
-            if l == "":
+            if line == "":
                 continue
-            f = l.split()
+            items = line.split()
+            count += 1
 
     for fh in fh_list:
         fh.close()
