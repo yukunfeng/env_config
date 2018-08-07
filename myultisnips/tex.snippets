@@ -35,3 +35,52 @@ snippet flushleft "flushleft"
   ${0:Your text here}
 \\end{flushleft}
 endsnippet
+
+snippet beamer "beamer"
+\documentclass{beamer}
+ 
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx} % to include figure
+\usepackage{amsmath}
+ 
+ 
+%Information to be included in the title page:
+\title{title}
+\author{author}
+\institute{insitute}
+\date{date}
+
+ 
+\setbeamertemplate{section in toc}{%
+  {\color{orange!70!black}\inserttocsectionnumber.}~\inserttocsection}
+\setbeamercolor{subsection in toc}{bg=white,fg=structure}
+\setbeamertemplate{subsection in toc}{%
+  \hspace{1.2em}{\color{orange}\rule[0.3ex]{3pt}{3pt}}~\inserttocsubsection\par}
+ 
+ 
+\AtBeginSection[] {%
+  \begin{frame}
+    \frametitle{Table of Contents}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+\begin{document}
+ 
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+\begin{frame}
+\frametitle{Outline}
+\tableofcontents
+\end{frame}
+
+\section{1st section}
+\begin{frame}{frame}
+    frame content
+\end{frame}
+
+
+\end{document}
+endsnippet
