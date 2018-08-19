@@ -93,8 +93,14 @@ snippet #!3
 #!/usr/bin/env python3
 endsnippet
 
-# 
 snippet for_em "fore enumerate"
-for count, ele in enumerate(your_list, 1):
+for count, ele in enumerate(${1:your_list}, 1):
 	pass
+endsnippet
+
+# usage of reference. It can also be refered winthin a new variable
+snippet path "path process"
+import os
+${1:file_path} = os.path.expanduser($1)
+head, tail = os.path.split($1)
 endsnippet
