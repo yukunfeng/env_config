@@ -104,3 +104,13 @@ import os
 ${1:file_path} = os.path.expanduser($1)
 head, tail = os.path.split($1)
 endsnippet
+
+# sort dict
+snippet sort_dict "sort dict"
+import collections
+${1:sorted_dict} = collections.OrderedDict(
+    sorted(${2:your_dict}.items(), reverse=${3:False}, key=lambda t: t[${4:0}])
+)
+for k, v in $1.items():
+    print(k, v)
+endsnippet
