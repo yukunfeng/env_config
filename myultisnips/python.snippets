@@ -42,13 +42,21 @@ parser = argparse.ArgumentParser(
 	formatter_class=argparse.ArgumentDefaultsHelpFormatter
 )
 # args['foo'] is None
-parser.add_argument('-f', '--foo',
-					help='Description for foo argument',
-					required=True
+parser.add_argument(
+	'-f', '--foo',
+	help='Description for foo argument',
+	required=True
 )
-parser.add_argument('-b', '--bar',
-					help='Description for bar argument',
-					required=True
+# another way to avoid double dash
+parser.add_argument(
+	'-f',
+	help='Description for foo argument',
+	required=True
+)
+parser.add_argument(
+	'-b', '--bar',
+	help='Description for bar argument',
+	required=True
 )
 # add default='xx' if you want
 #parser.add_argument('-b', type=int or float)
@@ -56,6 +64,8 @@ parser.add_argument('-b', '--bar',
 # args['w'] = False or True
 parser.add_argument('-w', action='store_true')
 args = vars(parser.parse_args())
+# another way to directly access variable like args.foo
+args = parser.parse_args()
 # args now is a dict
 args['f']
 endsnippet
