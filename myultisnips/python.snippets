@@ -129,3 +129,12 @@ snippet debug "debug"
 import pdb
 pdb.set_trace()
 endsnippet
+
+snippet textfreq "text frequency"
+from collections import Counter
+counter = Counter()
+lines = [
+	counter.update(line.strip().split())
+	for line in open(${1:file_path}, 'r').readlines()
+]
+endsnippet
