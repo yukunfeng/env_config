@@ -1,16 +1,3 @@
-snippet texbegin "tex begin format"
-\documentclass[a4paper,12pt]{article}
-\usepackage{amsmath}
-% no indent
-\setlength\parindent{0pt}
-\usepackage{graphicx} % to include figure
-
-% ita, bf, under to triggle text format
-% center to center a paragraph
-\begin{document}
-\end{document}
-endsnippet
-
 snippet partial "partial"
 % fi/fi x
 \frac{\partial ${1:}}{\partial ${2:}}
@@ -40,6 +27,34 @@ snippet flushleft "flushleft"
   ${0:Your text here}
 \\end{flushleft}
 endsnippet
+
+snippet table "table"
+\begin{table}[h!]
+    % \scriptsize
+    \centering
+    \begin{tabular}{ccc}
+    t1 & t2 & t3 \\\
+    \hline
+    v1 & v2 & v3 \\\
+    \end{tabular}
+    \caption{caption}
+    \label{tab:label}
+\end{table}
+endsnippet
+
+snippet texbegin "tex begin format"
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath}
+% no indent
+\setlength\parindent{0pt}
+\usepackage{graphicx} % to include figure
+
+% ita, bf, under to triggle text format
+% center to center a paragraph
+\begin{document}
+\end{document}
+endsnippet
+
 
 snippet beamer "beamer"
 \documentclass{beamer}
