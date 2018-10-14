@@ -138,3 +138,8 @@ lines = [
 	for line in open(${1:file_path}, 'r').readlines()
 ]
 endsnippet
+
+snippet textvocab "build vocab from counter"
+import torchtext
+vocab = torchtext.vocab.Vocab(counter, specials=[])
+endsnippet
