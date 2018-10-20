@@ -147,19 +147,14 @@ call plug#end()
 " To ignore plugin indent changes, instead use:
 filetype plugin on
 
-""" setting for solarized
-" true color setting
-if (empty($TMUX))
-  if (has("nvim"))
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-  endif
-  if (has("termguicolors"))
-    set termguicolors
-  endif
-endif
 syntax enable
-" set background=light
+set termguicolors
+" see https://www.reddit.com/r/vim/comments/5416d0/true_colors_in_vim_under_tmux/
+" for why following two lines are added (short for tmux usage)
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set background=dark
+" set background=light
 colorscheme neodark
 " colorscheme solarized
 " colorscheme gruvbox
