@@ -1,3 +1,6 @@
+# For linux maps cpas lock to ctrl
+# in /etc/default/keyboard add XKBOPTIONS="ctrl:nocaps"
+
 # Set local path probably used in future
 export LD_LIBRARY_PATH="$HOME/local/lib/:$LD_LIBRARY_PATH"
 export PATH="$HOME/local/bin:$PATH"
@@ -233,25 +236,4 @@ fi
 # https://stackoverflow.com/questions/42848130/why-i-cant-access-remote-jupyter-notebook-server
 jupyter_server() {
     jupyter notebook --no-browser --ip $(hostname -I | perl -lane 'print $F[0]') --port 8333
-}
-
-
-# Print average of numbers from a file or stdin
-avg () {
-    perl -lne 'END{print "$sum/$c=".$sum/$c} next if /^$/; $sum+=$_;$c+=1' ${1:-/dev/stdin}
-}
-
-# One-line python
-olp() {
-    cmds="$1"
-    shift
-    root_dir="$HOME/workspace/env_config/"
-    write_py_path="$root_dir/write_py.py"
-    text_line_path="$root_dir/text_line.py"
-    text_line_path_tmp="$root_dir/.text_line_path.tmp.py"
-    python "$write_py_path" "$cmds" "$text_line_path" "$text_line_path_tmp"
-    if [ ! $? -eq 0 ]; then
-        exit 1
-    fi
-    python $text_line_path_tmp $@
 }
