@@ -8,5 +8,5 @@
 # ----------------------------------------------------------------------
 
 cp -r myultisnips $HOME/.vim
-cp .vimrc .zshrc $HOME
+cp .vimrc .zshrc .tmux.conf $HOME
 cp ./refined.zsh-theme $HOME/.oh-my-zsh/custom/themes
