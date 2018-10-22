@@ -210,6 +210,15 @@ function cngram() {
     done
 }
 
+# clear latex non-used files
+latex_clear () {
+    array=("log" "pdf" "toc" "nav" "out" "aux" "snm" "vrb")
+    for element in "${array[@]}"
+    do
+        rm -f $1.$element
+    done
+}
+
 if [ "$MY_MACHINE_TYPE" = "Mac" ]; then
     # Get scp parameter
     getscp () {

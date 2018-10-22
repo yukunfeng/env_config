@@ -35,3 +35,17 @@ else
 	${4:statement}
 fi
 endsnippet
+
+
+snippet array "shell array"
+array=("A" "B" "ElementC" "ElementE")
+for element in "${array[@]}"
+do
+    echo "$element"
+done
+
+# size is 4
+echo "Number of elements: ${#array[@]}"
+# print all
+echo "${array[@]}"
+endsnippet
