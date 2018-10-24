@@ -155,3 +155,32 @@ def print_variables(namespace, variables):
                 break
         print(f"{var_name}: {variable}")
 endsnippet
+
+snippet line_process "line_process"
+import sys
+import re
+
+if __name__ == "__main__":
+    fh_list = []
+    if len(sys.argv) >= 2:
+        extra_params = sys.argv[1:]
+        for file_path in extra_params:
+            fh = open(file_path, 'r')
+            fh_list.append(fh)
+    else:
+        fh = sys.stdin
+        fh_list.append(fh)
+
+    count = 0
+    for fh in fh_list:
+        for line in fh:
+            line = line.strip()
+            if line == "":
+                continue
+            items = line.split()
+            count += 1
+
+    for fh in fh_list:
+        fh.close()
+endsnippet
+
