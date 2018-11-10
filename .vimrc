@@ -72,6 +72,9 @@ let &tw=column_limit     " automatic word wrapping at column_limit. Set 0 to sto
 " gq to wrap selected lines, gqq wraps the current line and gqip wraps current paragraph
 " au BufWinEnter * let w:m2=matchadd('Underlined', '\%>' . 80 . 'v.\+', -1)    " this will high light when a column exceeds 80
 noremap <F9> :set wrap!<CR>
+" autowrap is excluded in shell script
+autocmd BufNewFile,BufRead *.sh set tw=0
+
 
 " map for tabs
 noremap <F10> :tabn<CR>
