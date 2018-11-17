@@ -1,3 +1,11 @@
+snippet timediff "time difference"
+import datetime
+start_time = datetime.datetime.now()
+end_time = datetime.datetime.now()
+time_elapsed = f"{end_time - start_time}"
+print(f"time_elapsed: {time_elapsed}")
+endsnippet
+
 snippet readfile "read file"
 ${1:fh} = open(${2:file_path}, "r")
 for line in $1:
@@ -183,4 +191,3 @@ if __name__ == "__main__":
     for fh in fh_list:
         fh.close()
 endsnippet
-
