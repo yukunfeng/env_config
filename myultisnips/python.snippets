@@ -1,9 +1,9 @@
 snippet timediff "time difference"
 import datetime
-start_time = datetime.datetime.now()
-end_time = datetime.datetime.now()
-time_elapsed = f"{end_time - start_time}"
-print(f"time_elapsed: {time_elapsed}")
+${1:start_time} = datetime.datetime.now()
+${2:end_time} = datetime.datetime.now()
+${3:time_elapsed} = f"{$2 - $1}"
+print(f"time_elapsed: {$3}")
 endsnippet
 
 snippet readfile "read file"
