@@ -6,6 +6,11 @@ ${3:time_elapsed} = f"{$2 - $1}"
 print(f"time_elapsed: {$3}")
 endsnippet
 
+snippet argtrue "argument true"
+parser.add_argument('--${1:flag}', action='store_true',
+					help='${2:help}')
+endsnippet
+
 snippet readfile "read file"
 ${1:fh} = open(${2:file_path}, "r")
 for line in $1:
