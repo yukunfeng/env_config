@@ -6,6 +6,8 @@
 	<true/>
 	<key>AboutToPasteTabsWithCancel_selection</key>
 	<integer>2</integer>
+	<key>AlternateMouseScroll</key>
+	<true/>
 	<key>AppleAntiAliasingThreshold</key>
 	<integer>1</integer>
 	<key>AppleScrollAnimationEnabled</key>
@@ -373,9 +375,11 @@
 	<key>NSFontPanelAttributes</key>
 	<string>1, 0</string>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/workspace/env_config</string>
+	<string>~/Documents</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{720, 459}</string>
+	<key>NSNavPanelExpandedSizeForSaveMode</key>
+	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -414,16 +418,20 @@
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>260 253 1020 259 0 0 1280 777 </string>
+	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
+	<string>332 469 616 174 0 0 1280 777 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>-1373 328 620 392 -1920 -280 1920 1057 </string>
+	<key>NSWindow Frame SessionsPreferences</key>
+	<string>-88 926 606 469 -357 800 1920 1080 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>385 372 928 394 0 0 1280 800 </string>
+	<string>537 1303 796 486 -357 800 1920 1057 </string>
 	<key>NSWindow Frame com.apple.typography_panel_Monaco</key>
 	<string>-1360 415 260 88 -1920 -280 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1920 -280 1920 989 -1920 -280 1920 1080 </string>
+	<string>0 177 730 600 0 0 1280 800 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>-1666 -112 901 644 -1920 -280 1920 1057 </string>
+	<string>0 68 1522 709 0 0 1280 800 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1896,7 +1904,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>63582182-CAFF-423F-81CD-EF570729BE91</string>
 	<key>NoSyncLastTipTime</key>
-	<real>550987548.71896601</real>
+	<real>554119700.29336596</real>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1953,6 +1961,33 @@
 		<string>0042</string>
 		<string>0043</string>
 		<string>0044</string>
+		<string>0045</string>
+		<string>0046</string>
+		<string>0047</string>
+		<string>0048</string>
+		<string>0049</string>
+		<string>0050</string>
+		<string>0051</string>
+		<string>0052</string>
+		<string>0053</string>
+		<string>0054</string>
+		<string>0055</string>
+		<string>0056</string>
+		<string>0057</string>
+		<string>0058</string>
+		<string>0059</string>
+		<string>0060</string>
+		<string>0061</string>
+		<string>0062</string>
+		<string>0063</string>
+		<string>0064</string>
+		<string>0065</string>
+		<string>0066</string>
+		<string>0067</string>
+		<string>0068</string>
+		<string>0069</string>
+		<string>0070</string>
+		<string>0071</string>
 	</array>
 	<key>PasteTabToStringTabStopSize</key>
 	<integer>4</integer>
@@ -2002,7 +2037,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-06-18T04:06:04Z</date>
+	<date>2018-10-22T11:15:03Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
@@ -2013,8 +2048,10 @@
 	<dict/>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.1.6</string>
+	<string>3.2.2</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
