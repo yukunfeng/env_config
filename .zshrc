@@ -219,6 +219,16 @@ latex_clear () {
     done
 }
 
+# generate pdf file with updated bib file
+biblatex () {
+    basefile=$1
+    latex_clear 
+    pdflatex $basefile
+    bibtex $basefile
+    pdflatex $basefile
+    pdflatex $basefile
+}
+
 if [ "$MY_MACHINE_TYPE" = "Mac" ]; then
     # Get scp parameter
     getscp () {
