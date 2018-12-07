@@ -212,11 +212,12 @@ function cngram() {
 
 # clear latex non-used files
 latex_clear () {
-    array=("log" "pdf" "toc" "nav" "out" "aux" "snm" "vrb")
+    array=("log" "pdf" "toc" "nav" "out" "aux" "snm" "vrb" "bbl" "blg")
     for element in "${array[@]}"
     do
         rm -f $1.$element
     done
+    rm -f texput.log
 }
 
 # generate pdf file with updated bib file
