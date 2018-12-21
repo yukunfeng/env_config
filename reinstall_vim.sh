@@ -19,3 +19,9 @@ tar zxf lua-5.3.5.tar.gz  # extract tar.gz file
 # download vim
 wget ftp://ftp.vim.org/pub/vim/unix/vim-8.0.tar.bz2
 tar xaf vim-8.0.tar.bz2
+
+# in here, download mac font for powerline for vim. Just click to install
+# https://gist.github.com/baopham/1838072
+
+# for mac
+# brew install coreutils
