@@ -1,4 +1,12 @@
-snippet docb "document brief"
+snippet array_index "array with index"
+array=('foo' 'bar' 'baz' 'bat')
+for ((idx=0; idx<${#array[@]}; ++idx)); do
+    echo "$idx - ${array[idx]}"
+done
+endsnippet
+
+
+snippet filenote "file note"
 # ----------------------------------------------------------------------
 # Author      : Yukun Feng
 # Date        : `date +%Y/%m/%d`
