@@ -1,6 +1,7 @@
 
 """"""""""" common setting """""""""""""""
 
+set foldlevel=99    " https://stackoverflow.com/questions/5784677/the-first-time-i-close-a-fold-it-closes-all-folds"
 " Fix backspace problem
 set backspace=indent,eol,start
 set nocompatible              " nocompatible with vi. This means Vim will use Vim defaults
@@ -116,6 +117,7 @@ Plug 'KeitaNakamura/neodark.vim'
 Plug 'morhetz/gruvbox'
 Plug 'rakr/vim-one'
 
+Plug 'vim-python/python-syntax'
 Plug 'vim-scripts/a.vim'
 " Plug 'Lokaltog/vim-powerline'
 Plug 'scrooloose/nerdtree'
@@ -187,6 +189,9 @@ let g:airline_section_a = ''
 nnoremap <F2> :NERDTree %<Return>    " open from current file's directory
 let g:NERDTreeDirArrowExpandable = '>'    " customize arrow for nerd tree
 let g:NERDTreeDirArrowCollapsible = '-'
+
+" setting for python syntax hightlighting
+let g:python_highlight_all = 1
 
 """ setting for nerd commenter
 " short cut for comment, see more about nerd comment by :help
