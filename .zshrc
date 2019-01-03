@@ -74,6 +74,7 @@ set -o vi
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=6'
 # ctrl + f to accept suggestions
 bindkey '^F' autosuggest-accept
+bindkey "^?" backward-delete-char
 
 # Eanble fuzzy search
 HISTORY_SUBSTRING_SEARCH_FUZZY='whateveryouwant'
