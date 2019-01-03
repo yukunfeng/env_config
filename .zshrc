@@ -74,6 +74,7 @@ set -o vi
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=6'
 # ctrl + f to accept suggestions
 bindkey '^F' autosuggest-accept
+# fix delete in vi-mode
 bindkey "^?" backward-delete-char
 
 # Eanble fuzzy search
