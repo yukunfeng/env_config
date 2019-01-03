@@ -46,6 +46,10 @@ if [ ! -d "${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting" ] ; then
     git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting
 fi
 
+if [ ! -d "${ZSH_CUSTOM}/plugins/zsh-autopair" ] ; then
+    git clone https://github.com/hlissner/zsh-autopair.git ${ZSH_CUSTOM}/plugins/zsh-autopair
+fi
+
 #
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -61,21 +65,50 @@ plugins=(
   history-substring-search
   zsh-autosuggestions
   zsh-syntax-highlighting
+  vi-mode
+  zsh-autopair
 )
 
 source $ZSH/oh-my-zsh.sh
 
 # configuration for plugins
 
-# Set shell command line to be vim-like
-set -o vi
+# Set shell command line to be vim-like: bash way
+# set -o vi
+# bindkey "^?" backward-delete-char   # fix delete in vi-mode
+# setting for vi-mode
+# ci"
+autoload -U select-quoted
+zle -N select-quoted
+for m in visual viopp; do
+  for c in {a,i}{\',\",\`}; do
+    bindkey -M $m $c select-quoted
+  done
+done
+
+# ci{, ci(
+autoload -U select-bracketed
+zle -N select-bracketed
+for m in visual viopp; do
+  for c in {a,i}${(s..)^:-'()[]{}<>bB'}; do
+    bindkey -M $m $c select-bracketed
+  done
+done
+
+# surround
+autoload -Uz surround
+zle -N delete-surround surround
+zle -N add-surround surround
+zle -N change-surround surround
+bindkey -a cs change-surround
+bindkey -a ds delete-surround
+bindkey -a ys add-surround
+bindkey -M visual S add-surround
 
 # Comment this will cause unseen completion due to same background color
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=6'
 # ctrl + f to accept suggestions
 bindkey '^F' autosuggest-accept
-# fix delete in vi-mode
-bindkey "^?" backward-delete-char
 
 # Eanble fuzzy search
 HISTORY_SUBSTRING_SEARCH_FUZZY='whateveryouwant'
