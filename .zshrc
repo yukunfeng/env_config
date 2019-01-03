@@ -76,7 +76,9 @@ source $ZSH/oh-my-zsh.sh
 # Set shell command line to be vim-like: bash way
 # set -o vi
 # bindkey "^?" backward-delete-char   # fix delete in vi-mode
-# setting for vi-mode
+
+# setting for vi-mode using plugs from zsh
+# see here https://www.reddit.com/r/vim/comments/7wj81e/you_can_get_vim_bindings_in_zsh_and_bash/
 # ci"
 autoload -U select-quoted
 zle -N select-quoted
