@@ -6,6 +6,14 @@ done
 endsnippet
 
 
+snippet string_compare_ifelse "sh string compare"
+if [ "$${1:your_var}" = "${2:const}"  ]; then 
+	# statement. If not equal, use !=
+else
+	# statement
+fi;
+endsnippet
+
 snippet filenote "file note"
 # ----------------------------------------------------------------------
 # Author      : Yukun Feng
