@@ -142,6 +142,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'FooSoft/vim-argwrap'
 Plug 'christoomey/vim-titlecase'
+Plug 'rhysd/vim-grammarous'
 
 " Initialize plugin system
 call plug#end()
