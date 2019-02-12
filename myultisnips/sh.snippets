@@ -1,3 +1,9 @@
+snippet for_in "for in given values"
+for ${1:element} in ${2:val1} ${3:val2}; do
+	echo \$$1
+done
+endsnippet
+
 snippet array_index "array with index"
 array=('foo' 'bar' 'baz' 'bat')
 for ((idx=0; idx<${#array[@]}; ++idx)); do
