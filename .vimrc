@@ -282,3 +282,8 @@ set wildmode=list:longest,list:full "" tab at first, only print file list
 xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+" Jump outside '"({
+if !exists('g:AutoPairsShortcutJump')
+  let g:AutoPairsShortcutJump = '<C-l>'
+endif
