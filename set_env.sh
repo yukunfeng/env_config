@@ -10,3 +10,4 @@
 cp -r myultisnips $HOME/.vim
 cp .vimrc .zshrc .tmux.conf $HOME
 cp ./refined.zsh-theme $HOME/.oh-my-zsh/custom/themes
+cp ./auto-pairs.vim $HOME/.vim/plugged/auto-pairs/plugin
