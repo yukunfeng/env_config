@@ -76,6 +76,10 @@ noremap <F9> :set wrap!<CR>
 " autowrap is excluded in shell script
 autocmd BufNewFile,BufRead *.sh set tw=0
 
+" set spell for latex
+autocmd FileType tex set spell
+autocmd FileType latex set spell
+
 
 " map for tabs
 noremap <F10> :tabn<CR>
@@ -120,7 +124,7 @@ Plug 'rakr/vim-one'
 Plug 'vim-python/python-syntax'
 Plug 'vim-scripts/a.vim'
 " Plug 'Lokaltog/vim-powerline'
-Plug 'scrooloose/nerdtree'
+" Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'jiangmiao/auto-pairs'
 " Plug 'taglist.vim'

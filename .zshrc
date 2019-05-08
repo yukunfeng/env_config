@@ -182,7 +182,7 @@ if [ -e "$HOME/.pyenv" ]; then
     if command -v pyenv 1>/dev/null 2>&1; then
         eval "$(pyenv init -)"
         # Setting python version
-        pyenv shell anaconda3-5.1.0
+        pyenv shell anaconda3-5.0.0
         # pyenv shell 3.6.5
         # pyenv shell 2.7.15
      fi
