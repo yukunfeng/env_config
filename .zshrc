@@ -269,11 +269,17 @@ biblatex () {
     pdflatex $basefile
 }
 
+    # Get file path
+getpath () {
+    echo "$(pwd)/$1" | ccc
+}
+
 if [ "$MY_MACHINE_TYPE" = "Mac" ]; then
     # Get scp parameter
     getscp () {
         echo $USER@$(ipconfig getifaddr en1):$(pwd)/$1
     }
+
 
     # remote copy (rcopy)
     rcopy () {
