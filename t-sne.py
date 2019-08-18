@@ -8,6 +8,7 @@ Description : T-SNE to visualize word vectors
 
 import numpy as np
 import matplotlib.pyplot as plt
+plt.switch_backend('agg')
 from sklearn.manifold import TSNE
 import word2vec
 
@@ -16,7 +17,7 @@ class TSNEWrapper(object):
     """TSNE to visualize vectors"""
     def __init__(self, file_name):
         """init"""
-        self.model = word2vec.load(file_name)
+        self.model = word2vec.load(file_name, kind="txt")
 
     def show_n_vectors(self, number):
         """show first n vectors in the word2vec model"""
@@ -38,10 +39,12 @@ class TSNEWrapper(object):
                 label, xy=(x, y),
                 xytext=(0, 0), textcoords='offset points'
             )
-        plt.show()
+        #  plt.show()
+        plt.savefig('foo.pdf')
         
 
 if __name__ == '__main__':
     # Unit test
-    tnse = TSNEWrapper("../common_corpus/text8.bin")
-    tnse.show_n_vectors(1000)
+    word_vec_path = "../common_corpus/data/50lm/en/train.txt.200.cbow.e5.catcl.600.neg5.ns.nosub"
+    tnse = TSNEWrapper("../common_corpus/data/50lm/en/train.txt.200.cbow.e5.catcl.600.neg5.ns.nosub")
+    tnse.show_n_vectors(200)
