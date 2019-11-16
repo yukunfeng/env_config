@@ -1,6 +1,14 @@
 #!/bin/sh
 
+# Note
+# If root is available, but hard to compile even with correct options, try compile locally
+# utisnips recently has some bugs. After downloading it, go back to a certain tag:
+# git reset --hard tagname (use 3.1)
+# Following is how to locally compile. For re-complie with root, see gist in my github
+
 # re-install vim with python and lua support. (this is for some plugins in vim)
+
+# makdir softwares
 
 # first step: download lua source code
 mkdir -p $HOME/local    # the source code will be installed in this target directory
@@ -19,6 +27,11 @@ tar zxf lua-5.3.5.tar.gz  # extract tar.gz file
 # download vim
 wget ftp://ftp.vim.org/pub/vim/unix/vim-8.0.tar.bz2
 tar xaf vim-8.0.tar.bz2
+
+
+# compile
+# check whether python config is correct or not
+./configure --enable-python3interp --with-python-config-dir=/usr/lib/python3.5/config-3.5m-x86_64-linux-gnu/ --enable-luainterp --with-lua-prefix=$HOME/local --prefix=$HOME/local
 
 # in here, download mac font for powerline for vim. Just click to install
 # https://gist.github.com/baopham/1838072
