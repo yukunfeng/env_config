@@ -5,6 +5,7 @@
 # utisnips recently has some bugs. After downloading it, go back to a certain tag:
 # git reset --hard tagname (use 3.1)
 # Following is how to locally compile. For re-complie with root, see gist in my github
+# if python3 has some problems, try python2 and remmber set ultisnips to tag 3.1
 
 # re-install vim with python and lua support. (this is for some plugins in vim)
 
