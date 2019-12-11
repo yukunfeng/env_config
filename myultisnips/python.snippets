@@ -170,7 +170,7 @@ vocab = torchtext.vocab.Vocab(counter, specials=[])
 endsnippet
 
 snippet print_variables "print variables"
-def print_variables(namespace, variables):
+def print_variables(variables, namespace=globals()):
     for variable in variables:
         var_name = "None"
         for name in namespace:
