@@ -147,7 +147,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'FooSoft/vim-argwrap'
 Plug 'christoomey/vim-titlecase'
 Plug 'rhysd/vim-grammarous'
-Plug 'davidhalter/jedi-vim'
+" Plug 'davidhalter/jedi-vim'
 
 
 " Initialize plugin system
