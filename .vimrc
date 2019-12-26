@@ -213,6 +213,9 @@ let NERDSpaceDelims = 1        " leave a space after commentering
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 let g:ale_cache_executable_check_failures = 1
+let g:ale_linters = {
+\   'python': ['pylint'],
+\}
 
 """ setting for auto pairs
 " to insert one pair purely, use use Ctrl-V + pair
