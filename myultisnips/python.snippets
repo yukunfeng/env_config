@@ -1,3 +1,44 @@
+snippet gflag_string "google flags"
+flags.DEFINE_string("${2:param_name}", ${3:value}, "${4:explaination}")
+endsnippet
+
+snippet gflag_bool "google flags"
+flags.DEFINE_bool("${2:param_name}", ${3:value}, "${4:explaination}")
+endsnippet
+
+snippet gflag_integer "google flags"
+flags.DEFINE_integer("${2:param_name}", ${3:value}, "${4:explaination}")
+endsnippet
+
+snippet gflag_float "google flags"
+flags.DEFINE_float("${2:param_name}", ${3:value}, "${4:explaination}")
+endsnippet
+
+snippet gnewpy "google new python format"
+# Lint as: python3
+"""TODO(yukunfg): DO NOT SUBMIT without one-line documentation for test.
+
+TODO(yukunfg): DO NOT SUBMIT without a detailed description of test.
+"""
+
+from __future__ import absolute_import  # Not necessary in a Python 3
+from __future__ import division  # Not necessary in a Python 3-only module
+from __future__ import google_type_annotations  # Not necessary in a Python 3
+from __future__ import print_function  # Not necessary in a Python 3-only module
+
+from absl import app
+from absl import flags
+
+FLAGS = flags.FLAGS
+
+
+def main(argv):
+  if len(argv) > 1:
+    raise app.UsageError('Too many command-line arguments.')
+
+if __name__ == '__main__':
+  app.run(main)
+endsnippet
 
 snippet filelists "file lists"
 import os
