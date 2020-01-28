@@ -1,3 +1,12 @@
+snippet gdef "google function with docstring"
+def ${1:fname}(${2:`indent('.') ? 'self' : ''`}):
+	"""${3:docstring for $1}
+
+	Args:
+		${4:}
+	"""
+endsnippet
+
 snippet gflag_string "google flags"
 flags.DEFINE_string("${2:param_name}", ${3:value}, "${4:explaination}")
 endsnippet

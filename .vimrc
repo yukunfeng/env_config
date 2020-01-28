@@ -138,16 +138,17 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'justinmk/vim-sneak'
 Plug 'haya14busa/incsearch.vim'
-Plug 'nvie/vim-flake8'
+" Plug 'nvie/vim-flake8'
 " Plug 'w0rp/ale'
 Plug 'junegunn/vim-easy-align'
 Plug 'lervag/vimtex'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'FooSoft/vim-argwrap'
+" Plug 'FooSoft/vim-argwrap'
 Plug 'christoomey/vim-titlecase'
 Plug 'rhysd/vim-grammarous'
 " Plug 'davidhalter/jedi-vim'
+Plug 'tell-k/vim-autopep8'
 
 
 " Initialize plugin system
@@ -229,6 +230,14 @@ let Tlist_File_Fold_Auto_Close=1    " auto fold
 
 """ argwrap
 nnoremap ,g :ArgWrap<Return>
+
+""" autopep 8
+autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
+" let g:autopep8_ignore="E501,W293"
+let g:autopep8_max_line_length=79
+" let g:autopep8_indent_size=2 " this should be put in after together with indent setting
+" let g:autopep8_disable_show_diff=1
+
 
 
 """ setting for incsearch
