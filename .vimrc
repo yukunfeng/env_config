@@ -263,6 +263,12 @@ let g:tagbar_show_linenumbers = 1
 """ setting for YouCompleteMe
 " noremap <F3> :YcmCompleter GetDoc<Return> " short cut for get document
 " noremap <F4> :YcmCompleter GoToDeclaration<Return> " short cut for go to declaration
+"
+""" setting for sneak
+let g:sneak#streak = 1
+let g:sneak#use_ic_scs = 1
+highlight Sneak guifg=black guibg=gray ctermfg=black ctermbg=gray
+highlight link Sneak None
 
 """ setting for neocomplete
 let g:neocomplete#enable_at_startup = 1
