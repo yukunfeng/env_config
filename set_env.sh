@@ -24,3 +24,7 @@ cp ./python.vim $after_plugin_dir
 yapf_config="$HOME/.config/yapf/"
 mkdir -p $yapf_config
 cp ./yapf_style "$yapf_config/style"
+
+# Install fzf
+# git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+# ~/.fzf/install
