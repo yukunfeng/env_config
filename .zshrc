@@ -182,7 +182,7 @@ if [ -e "$HOME/.pyenv" ]; then
     if command -v pyenv 1>/dev/null 2>&1; then
         eval "$(pyenv init -)"
         # Setting python version
-        pyenv shell anaconda3-5.0.0
+        pyenv shell anaconda3-5.1.0
         # pyenv shell 3.6.5
         # pyenv shell 2.7.15
      fi
@@ -301,4 +301,8 @@ fi
 # https://stackoverflow.com/questions/42848130/why-i-cant-access-remote-jupyter-notebook-server
 jupyter_server() {
     jupyter notebook --no-browser --ip $(hostname -I | perl -lane 'print $F[0]') --port 8333
+}
+
+fh() {
+  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -r 's/ *[0-9]*\*? *//' | sed -r 's/\\/\\\\/g')
 }
