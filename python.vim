@@ -4,8 +4,3 @@ set expandtab        " in Insert mode: Use the appropriate number of spaces to i
 let &tabstop = my_space       " number of spaces that a <Tab> in the file counts for
 let &shiftwidth = my_space
 let &softtabstop = my_space
-
-" set for yapf
-autocmd FileType python let &shiftwidth=my_space
-autocmd FileType python let &tabstop=my_space
-autocmd FileType python let &softtabstop=my_space

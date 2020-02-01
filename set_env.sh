@@ -19,3 +19,8 @@ cp ./auto-pairs.vim $HOME/.vim/plugged/auto-pairs/plugin
 after_plugin_dir="$HOME/.vim/after/ftplugin/"
 mkdir -p "$after_plugin_dir"
 cp ./python.vim $after_plugin_dir
+
+# set for yapf format
+yapf_config="$HOME/.config/yapf/"
+mkdir -p $yapf_config
+cp ./yapf_style "$yapf_config/style"
