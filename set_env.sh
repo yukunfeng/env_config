@@ -26,5 +26,8 @@ mkdir -p $yapf_config
 cp ./yapf_style "$yapf_config/style"
 
 # Install fzf
-# git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-# ~/.fzf/install
+fzf_git="https://github.com/junegunn/fzf.git"
+if [ -e "~/.fzf" ]; then
+    git clone --depth 1 $fzf_git ~/.fzf
+fi
+~/.fzf/install
