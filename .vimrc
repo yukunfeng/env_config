@@ -149,6 +149,8 @@ Plug 'christoomey/vim-titlecase'
 Plug 'rhysd/vim-grammarous'
 " Plug 'davidhalter/jedi-vim'
 " Plug 'tell-k/vim-autopep8'
+Plug '~/.fzf'
+Plug 'junegunn/fzf.vim'
 
 
 " Initialize plugin system
@@ -172,6 +174,18 @@ set background=dark
 colorscheme neodark
 " colorscheme solarized
 " colorscheme gruvbox
+
+" setting for fzf
+" Open files in vertical horizontal split
+" nnoremap <silent> <Leader>v :call fzf#run({
+nnoremap <silent> qv :call fzf#run({
+\   'right': winwidth('.') / 2,
+\   'sink':  'vertical botright split' })<CR>
+
+" fuzzy file path completion
+inoremap <expr> <c-x><c-f> fzf#vim#complete#path(
+    \ "find . -path '*/\.*' -prune -o -print \| sed '1d;s:^..::'",
+    \ fzf#wrap({'dir': expand('%:p:h')}))
 
 """ setting for status line
 " set laststatus=0   " Always show the statusline
@@ -211,12 +225,12 @@ noremap ,u :call NERDComment(1, 'uncomment')<Return>
 let NERDSpaceDelims = 1        " leave a space after commentering
 
 " setting for ale
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
-let g:ale_cache_executable_check_failures = 1
-let g:ale_linters = {
-\   'python': ['pylint'],
-\}
+" nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+" nmap <silent> <C-j> <Plug>(ale_next_wrap)
+" let g:ale_cache_executable_check_failures = 1
+" let g:ale_linters = {
+" \   'python': ['pylint'],
+" \}
 
 """ setting for auto pairs
 " to insert one pair purely, use use Ctrl-V + pair
