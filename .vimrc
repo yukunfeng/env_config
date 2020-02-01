@@ -148,7 +148,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'christoomey/vim-titlecase'
 Plug 'rhysd/vim-grammarous'
 " Plug 'davidhalter/jedi-vim'
-Plug 'tell-k/vim-autopep8'
+" Plug 'tell-k/vim-autopep8'
 
 
 " Initialize plugin system
@@ -232,9 +232,9 @@ let Tlist_File_Fold_Auto_Close=1    " auto fold
 nnoremap ,g :ArgWrap<Return>
 
 """ autopep 8
-autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
+" autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
 " let g:autopep8_ignore="E501,W293"
-let g:autopep8_max_line_length=79
+" let g:autopep8_max_line_length=79
 " let g:autopep8_indent_size=2 " this should be put in after together with indent setting
 " let g:autopep8_disable_show_diff=1
 
