@@ -238,7 +238,8 @@ nnoremap ,g :ArgWrap<Return>
 " let g:autopep8_indent_size=2 " this should be put in after together with indent setting
 " let g:autopep8_disable_show_diff=1
 
-
+""" yapf setting
+autocmd FileType python set formatprg=yapf
 
 """ setting for incsearch
 map /  <Plug>(incsearch-forward)
