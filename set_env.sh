@@ -27,7 +27,7 @@ cp ./yapf_style "$yapf_config/style"
 
 # Install fzf
 fzf_git="https://github.com/junegunn/fzf.git"
-if [ -e "~/.fzf" ]; then
+if [ ! -e "~/.fzf" ]; then
     git clone --depth 1 $fzf_git ~/.fzf
 fi
 ~/.fzf/install
