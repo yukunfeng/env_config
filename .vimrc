@@ -63,7 +63,7 @@ autocmd FileType python map <buffer> <F6> :call Flake8()<CR>
 " nnoremap <F6> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:noh<CR>
 
 " 79 column layout concerns
-let column_limit=99
+let column_limit=79
 let &colorcolumn=column_limit   " a vertical line will appear at column_limit
 
 " setting for word wrapping, see http://vim.wikia.com/wiki/Automatic_word_wrapping
