@@ -76,6 +76,8 @@ noremap <F9> :set wrap!<CR>
 " autowrap is excluded in shell script
 autocmd BufNewFile,BufRead *.sh set tw=0
 
+set nowrap
+
 " set spell for latex
 autocmd FileType tex set spell
 autocmd FileType latex set spell
@@ -261,7 +263,7 @@ map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
 """ setting for indentLine
-let g:indentLine_char = '┊'
+" let g:indentLine_char = '┊'
 " avoiding IndentLine to start for Markdown and tex files
 " this is because IndentLine will set conceallevel to 2 by default which makes mk or tex files hard to read
 autocmd FileType markdown let g:indentLine_enabled=0
