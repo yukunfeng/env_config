@@ -1,3 +1,8 @@
+snippet cmpfloat "compare with float"
+	if abs(${1:a} - ${2:b}) <= 1e-8:
+		pass
+endsnippet
+
 snippet gdef "google function with docstring"
 def ${1:fname}(${2:`indent('.') ? 'self' : ''`}):
 	"""${3:docstring for $1}
