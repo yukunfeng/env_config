@@ -151,9 +151,8 @@ snippet readstdin "read from stdin"
 import fileinput
 for line in fileinput.input():
 	line = line.strip()
-	# Skip empty lines
 	if line == "":
-		continue
+		continue # Skip empty lines.
 # Or
 import sys
 fh = sys.stdin
