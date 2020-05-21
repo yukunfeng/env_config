@@ -82,9 +82,10 @@ set nowrap
 autocmd FileType tex set spell
 autocmd FileType latex set spell
 
-
 " map for tabs
-noremap <F10> :tabn<CR>
+" noremap <F10> :tabn<CR>
+nmap <silent> <C-n> :tabnext<CR>
+nmap <silent> <C-p> :tabprev<CR>
 
 " short cut for change windows
 noremap <C-h> <C-w>h
@@ -178,8 +179,11 @@ colorscheme neodark
 " colorscheme gruvbox
 
 " setting for fzf
-" Open files in vertical horizontal split
-" nnoremap <silent> <Leader>v :call fzf#run({
+" Open files in newtab or vertical horizontal split
+nnoremap <silent> qt :call fzf#run({
+\   'right': winwidth('.') / 2,
+\   'sink':  'tabnew' })<CR>
+
 nnoremap <silent> qv :call fzf#run({
 \   'right': winwidth('.') / 2,
 \   'sink':  'vertical botright split' })<CR>
