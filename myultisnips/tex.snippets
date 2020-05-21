@@ -1,3 +1,7 @@
+snippet pipe "pipe"
+$\vert$
+endsnippet
+
 snippet ref "refer to table, figure etc."
 \\ref{${1:}}
 endsnippet
@@ -51,8 +55,18 @@ snippet item "itemize"
 \\end{itemize}
 endsnippet
 
+snippet itempure "itemize pure"
+\\begin{itemize}
+	\\item[•] ${0}
+\\end{itemize}
+endsnippet
+
 snippet it "item"
 \\item[•] ${0}
+endsnippet
+
+snippet itpure "item pure"
+\\item ${0}
 endsnippet
 
 snippet flushleft "flushleft"
