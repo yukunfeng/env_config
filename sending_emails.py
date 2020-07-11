@@ -17,7 +17,7 @@ if __name__ == "__main__":
 
   mail_host = 'smtp.126.com'
   mail_username = 'fengyukun_blcu@126.com'
-  mail_auth_password = ""
+  mail_auth_password = "a635661820"
 
   sender = 'fengyukun_blcu@126.com'
   receivers = 'yukunfg@gmail.com'
