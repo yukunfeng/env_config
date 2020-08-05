@@ -271,7 +271,10 @@ biblatex () {
 
     # Get file path
 getpath () {
-    echo "$(pwd)/$1" | ccc
+    if ! [ -x "$(command -v ccc)" ]; then
+        printf "$(pwd)/$1" | ccc
+    fi
+    printf "$(pwd)/$1\n"
 }
 
 if [ "$MY_MACHINE_TYPE" = "Mac" ]; then
