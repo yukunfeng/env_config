@@ -1,3 +1,4 @@
+import socket
 import argparse
 import smtplib
 from email.mime.text import MIMEText
@@ -22,6 +23,9 @@ if __name__ == "__main__":
   sender = 'fengyukun_blcu@126.com'
   receivers = 'yukunfg@gmail.com'
 
+  
+  hostname = socket.gethostname()
+  args['content'] += f" . From {hostname}"
   message = MIMEText(args['content'], 'plain', 'utf-8')
   message['From'] = sender
   message['To'] = receivers
