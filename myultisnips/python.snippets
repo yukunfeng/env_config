@@ -146,10 +146,11 @@ parser.add_argument(
 # args['w'] = False or True
 parser.add_argument('-w', action='store_true')
 args = vars(parser.parse_args())
-# another way to directly access variable like args.foo
-args = parser.parse_args()
 # args now is a dict
 args['f']
+
+# another way to directly access variable like args.foo
+args = parser.parse_args()
 endsnippet
 
 snippet readstdin "read from stdin"
