@@ -167,11 +167,13 @@ call plug#end()
 filetype plugin on
 
 syntax enable
-set termguicolors
-" see https://www.reddit.com/r/vim/comments/5416d0/true_colors_in_vim_under_tmux/
-" for why following two lines are added (short for tmux usage)
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+" https://github.com/tmux/tmux/issues/1246
+if exists('+termguicolors')
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+    set termguicolors
+endif
 set background=dark
 " set background=light
 colorscheme neodark

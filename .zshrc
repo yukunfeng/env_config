@@ -201,6 +201,9 @@ if [ -e "/usr/local/cuda" ]; then
     export LD_LIBRARY_PATH=/usr/local/cudnn/lib64:$LD_LIBRARY_PATH
 fi
 
+# Add slack_notification
+export PATH=$HOME/slack_notification:$PATH
+
 # Set for CCProxy for server unable to acess Internet
 # outer_ip=10.130.14.95:808
 # export http_proxy=$outer_ip
