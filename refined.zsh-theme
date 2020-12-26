@@ -81,7 +81,9 @@ precmd() {
 PROMPT="%(?.%F{magenta}❯❯❯%f.%F{red}✘ ❯❯❯%f) " # Display a red prompt char on failure
 # PROMPT="%(?.%F{magenta}.%F{white})❯❯❯%f " # Display a red prompt char on failure
 # RPROMPT="%F{8}${SSH_TTY:+%n@%m}%f"    # Display username if connected via SSH
-RPROMPT="%(?.%F{magenta}.%F{red})${SSH_TTY:+%n@%m}%f"    # Display username if connected via SSH
+tmux_mode="|tmux"
+[ -z "${TMUX}" ] && tmux_mode=""
+RPROMPT="%(?.%F{magenta}.%F{red})${SSH_TTY:+%n@%m}\$tmux_mode%f"    # Display username if connected via SSH
 
 # ------------------------------------------------------------------------------
 #
