@@ -1,3 +1,8 @@
+snippet readfilew2  "read file with 2 files"
+with open(${1:}, 'r') as ${2:}, open(${3:}, 'r') as ${4:}:
+  for ${5:}, ${6:} in zip($2, $4):
+endsnippet
+
 snippet cmpfloat "compare with float"
 	if abs(${1:a} - ${2:b}) <= 1e-8:
 		pass
