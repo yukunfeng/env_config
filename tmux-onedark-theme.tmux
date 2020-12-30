@@ -1,10 +1,12 @@
 #!/bin/bash
-onedark_black="#282c34"
+onedark_black="#1f2f37"
+# onedark_black="#282c34"
 onedark_blue="#61afef"
 onedark_yellow="#e5c07b"
 onedark_red="#e06c75"
 onedark_white="#aab2bf"
-onedark_green="#98c379"
+# onedark_green="#98c379"
+onedark_green="#465b68"
 onedark_visual_grey="#3e4452"
 onedark_comment_grey="#5c6370"
 
@@ -81,10 +83,12 @@ status_widgets=$(get "@onedark_widgets")
 time_format=$(get "@onedark_time_format" "%R")
 date_format=$(get "@onedark_date_format" "%d/%m/%Y")
 
-set "status-right" "${status_widgets} #[fg=$onedark_black,bg=$onedark_green] #h #[fg=$onedark_yellow, bg=$onedark_green]"
+# Previous: only gpu info here
+set "status-right" "${status_widgets} #[fg=$onedark_black,bg=$onedark_green]"
+# set "status-right" "${status_widgets} #[fg=$onedark_black,bg=$onedark_green] #h #[fg=$onedark_yellow, bg=$onedark_green]"
 # Original
 # set "status-right" "#[fg=$onedark_white,bg=$onedark_black,nounderscore,noitalics]${time_format}  ${date_format} #[fg=$onedark_visual_grey,bg=$onedark_black]#[fg=$onedark_visual_grey,bg=$onedark_visual_grey]#[fg=$onedark_white, bg=$onedark_visual_grey]${status_widgets} #[fg=$onedark_green,bg=$onedark_visual_grey,nobold,nounderscore,noitalics]#[fg=$onedark_black,bg=$onedark_green,bold] #h #[fg=$onedark_yellow, bg=$onedark_green]#[fg=$onedark_red,bg=$onedark_yellow]"
-set "status-left" "#[fg=$onedark_black,bg=$onedark_green] #S #{prefix_highlight}#[fg=$onedark_green,bg=$onedark_black,nobold,nounderscore,noitalics]"
+set "status-left" "#[fg=$onedark_black,bg=$onedark_green] #S@#h #{prefix_highlight}#[fg=$onedark_green,bg=$onedark_black,nobold,nounderscore,noitalics]"
 # Original
 # set "status-left" "#[fg=$onedark_black,bg=$onedark_green,bold] #S #{prefix_highlight}#[fg=$onedark_green,bg=$onedark_black,nobold,nounderscore,noitalics]"
 
