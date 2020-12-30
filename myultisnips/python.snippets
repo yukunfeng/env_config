@@ -122,6 +122,15 @@ search_result = re.search(pattern, string)
 # usually use re.subn to return (new_string, number_of_subs_made).
 endsnippet
 
+snippet argparse_simple "argument parse simple version"
+import argparse
+parser = argparse.ArgumentParser(
+	formatter_class=argparse.ArgumentDefaultsHelpFormatter
+)
+parser.add_argument('-f', '--foo', required=True)
+args = parser.parse_args()
+endsnippet
+
 snippet argparse "argument parse"
 import argparse
 parser = argparse.ArgumentParser(
