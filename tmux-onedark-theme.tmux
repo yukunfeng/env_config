@@ -7,7 +7,7 @@ onedark_red="#e06c75"
 onedark_white="#aab2bf"
 # onedark_green="#98c379"
 onedark_green="#465b68"
-onedark_visual_grey="#3e4452"
+onedark_visual_grey="#4d5656"
 onedark_comment_grey="#5c6370"
 
 get() {
