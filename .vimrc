@@ -123,6 +123,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'KeitaNakamura/neodark.vim'
 Plug 'morhetz/gruvbox'
 Plug 'rakr/vim-one'
+Plug 'chriskempson/vim-tomorrow-theme'
 
 Plug 'vim-python/python-syntax'
 Plug 'vim-scripts/a.vim'
@@ -174,9 +175,10 @@ if exists('+termguicolors')
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
     set termguicolors
 endif
-set background=dark
-" set background=light
-colorscheme neodark
+" set background=dark
+" colorscheme neodark
+set background=light
+colorscheme tomorrow
 " colorscheme solarized
 " colorscheme gruvbox
 
@@ -198,7 +200,8 @@ inoremap <expr> <c-x><c-f> fzf#vim#complete#path(
 """ setting for status line
 " set laststatus=0   " Always show the statusline
 set laststatus=2   " Always show the statusline
-let g:airline_theme='neodark'
+let g:airline_theme='tomorrow'
+" let g:airline_theme='neodark'
 " let g:airline_theme='solarized'
 " let g:airline_solarized_bg='dark'
 " use powerline fonts
