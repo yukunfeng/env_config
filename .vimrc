@@ -205,7 +205,7 @@ let g:airline_section_a = ''
 set background=light
 if &background=='light'
     let g:airline_theme='tomorrow'
-    colorscheme tomorrow
+    colorscheme Tomorrow
 else
     let g:airline_theme='neodark'
     colorscheme neodark
