@@ -175,12 +175,6 @@ if exists('+termguicolors')
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
     set termguicolors
 endif
-" set background=dark
-" colorscheme neodark
-set background=light
-colorscheme tomorrow
-" colorscheme solarized
-" colorscheme gruvbox
 
 " setting for fzf
 " Open files in newtab or vertical horizontal split
@@ -200,10 +194,6 @@ inoremap <expr> <c-x><c-f> fzf#vim#complete#path(
 """ setting for status line
 " set laststatus=0   " Always show the statusline
 set laststatus=2   " Always show the statusline
-let g:airline_theme='tomorrow'
-" let g:airline_theme='neodark'
-" let g:airline_theme='solarized'
-" let g:airline_solarized_bg='dark'
 " use powerline fonts
 let g:airline_powerline_fonts = 1
 " file encoding section
@@ -211,12 +201,15 @@ let g:airline_section_y = ''
 " mode section
 let g:airline_section_a = ''
 
-" let g:Powerline_theme = 'default'
-" if &background=='light'
-    " let g:Powerline_colorscheme = 'solarized'
-" else
-    " let g:Powerline_colorscheme = 'default'
-" endif
+" set background=dark
+set background=light
+if &background=='light'
+    let g:airline_theme='tomorrow'
+    colorscheme tomorrow
+else
+    let g:airline_theme='neodark'
+    colorscheme neodark
+endif
 
 """ setting for nerd tree
 " nnoremap <F2> :NERDTreeToggle<Return>    " make a short cut for nerd tree
