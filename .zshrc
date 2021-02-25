@@ -155,21 +155,23 @@ export LC_CTYPE=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # Set for macos
+LS_COLORS='di=1:fi=30' ; export LS_COLORS
+alias l='ls -htl'
 # coloring output from ls for mac
 if [ "$MY_MACHINE_TYPE" = "Mac" ]; then
     # brew install coreutils at first
     # Or simply use following line if gls is not available
     # export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
-    alias l='gls -htl --color=auto'
-    alias ll='l'
-    alias ls='gls --color=auto'
+    # alias l='gls -htl --color=auto'
+    # alias ll='l'
+    # alias ls='gls --color=auto'
     alias ccc='pbcopy'
     alias vvv='pbpaste'
     alias shuf='gshuf'
 else
     # Alias the command for linux
-    alias l='ls -lht --color=auto'
-    alias ll='l'
+    # alias l='ls -lht --color=auto'
+    # alias ll='l'
     alias ccc='xclip -selection clipboard'
     alias vvv='xclip -selection clipboard -o'
     alias open='gnome-open'
@@ -215,22 +217,22 @@ export PATH=$HOME/slack_notification:$PATH
 
 # Set the color for ls
 
-colors_dir="${HOME}/.dircolors"
-color_file="dircolors.ansi-dark"
-if [ -d "$colors_dir" ] ; then
-    if [ "$MY_MACHINE_TYPE" = "Mac" ]; then
-        eval `gdircolors ${colors_dir}/${color_file}`
-    else
-        eval `dircolors ${colors_dir}/${color_file}`
-    fi
+# colors_dir="${HOME}/.dircolors"
+# color_file="dircolors.ansi-dark"
+# if [ -d "$colors_dir" ] ; then
+    # if [ "$MY_MACHINE_TYPE" = "Mac" ]; then
+        # eval `gdircolors ${colors_dir}/${color_file}`
+    # else
+        # eval `dircolors ${colors_dir}/${color_file}`
+    # fi
 
-else
+# else
     # Create dir and download dircolors
-    mkdir ${colors_dir}
-    git clone https://github.com/seebi/dircolors-solarized.git ${colors_dir}
-    eval `dircolors ${colors_dir}/${color_file}`
-    eval `gdircolors ${colors_dir}/${color_file}`
-fi
+    # mkdir ${colors_dir}
+    # git clone https://github.com/seebi/dircolors-solarized.git ${colors_dir}
+    # eval `dircolors ${colors_dir}/${color_file}`
+    # eval `gdircolors ${colors_dir}/${color_file}`
+# fi
 
 # Function
 
