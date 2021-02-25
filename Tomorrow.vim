@@ -9,7 +9,8 @@ let s:background = "feffff"
 " let s:background = "fafafa"
 let s:selection = "d6d6d6"
 let s:line = "efefef"
-let s:comment = "8e908c"
+let s:comment = "757474"
+" let s:comment = "8e908c" " original one, lighter
 let s:red = "c82829"
 let s:orange = "f5871f"
 let s:yellow = "eab700"
@@ -234,7 +235,8 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	endfun
 
 	" Vim Highlighting
-	call <SID>X("Normal", s:foreground, s:background, "")
+    " call <SID>X("Normal", s:foreground, s:background, "")
+    call <SID>X("Normal", "000000", s:background, "")
   highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=#F4F7F7
   " highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 	call <SID>X("NonText", s:selection, "", "")
