@@ -133,7 +133,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'jiangmiao/auto-pairs'
 " Plug 'taglist.vim'
 Plug 'majutsushi/tagbar'      " better support than taglist for object oriented
-Plug 'Yggdroot/indentLine'
+" Plug 'Yggdroot/indentLine'
 " YouCompleteMe is a plugin with a compiled component. So read the doc about how to install it correctly
 "Plug 'Valloric/YouCompleteMe'
 Plug 'Shougo/neocomplete'
