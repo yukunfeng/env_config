@@ -314,3 +314,5 @@ jupyter_server() {
 fh() {
   print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -r 's/ *[0-9]*\*? *//' | sed -r 's/\\/\\\\/g')
 }
+
+export FZF_DEFAULT_OPTS='--color=light'
