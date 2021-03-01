@@ -155,7 +155,7 @@ export LC_CTYPE=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # Set for macos
-LS_COLORS='di=1:fi=30' ; export LS_COLORS
+LS_COLORS='di=1:fi=30:ex=30' ; export LS_COLORS
 alias l='ls -htl'
 # coloring output from ls for mac
 if [ "$MY_MACHINE_TYPE" = "Mac" ]; then
