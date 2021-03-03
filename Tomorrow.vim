@@ -10,6 +10,7 @@ let s:background = "feffff"
 let s:selection = "d6d6d6"
 let s:line = "efefef"
 let s:comment = "6D6D6D" " daker
+let s:current_tab = "B5B5B5"
 " let s:comment = "8e908c" " original one, lighter
 " let s:red = "c82829" " original one, lighter
 let s:red = "ae2829"
@@ -244,7 +245,9 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("NonText", s:selection, "", "")
 	call <SID>X("SpecialKey", s:selection, "", "")
 	call <SID>X("Search", s:foreground, s:yellow, "")
-	call <SID>X("TabLine", s:foreground, s:background, "reverse")
+    call <SID>X("TabLine", s:foreground, s:background, "") " non-active tab
+    call <SID>X("TabLineSel", s:foreground, s:current_tab, "") " active tab
+    call <SID>X("TabLineFill", s:background, s:background, "") " remaining
 	call <SID>X("StatusLine", s:window, s:yellow, "reverse")
 	call <SID>X("StatusLineNC", s:window, s:foreground, "reverse")
 	call <SID>X("VertSplit", s:window, s:window, "none")
