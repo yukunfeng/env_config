@@ -108,8 +108,8 @@ bindkey -a ys add-surround
 bindkey -M visual S add-surround
 
 # Comment this will cause unseen completion due to same background color
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=1'
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#C2C2C2' # do not work on server
+# https://upload.wikimedia.org/wikipedia/commons/1/15/Xterm_256color_chart.svg
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=251'
 # ctrl + f to accept suggestions
 bindkey '^F' autosuggest-accept
 bindkey '^n' forward-word
