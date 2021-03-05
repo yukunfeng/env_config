@@ -44,6 +44,8 @@ class TSNEWrapper(object):
             if line == "":
                 continue
             word, cluster = line.split()
+            if counter[word] < 5:
+                continue
             if word in counter and counter[word] >= 100:
                 cluster = freq_cluster_tag
             self.word2cluster[word] = cluster
@@ -148,14 +150,13 @@ class TSNEWrapper(object):
 if __name__ == '__main__':
     # Unit test
     #  word_vec_path = "../common_corpus/data/50lm/en/train.txt.200.cbow.e5.catcl.600.neg5.ns.nosub"
-    word_vec_path = "../common_corpus/data/50lm/en/train.txt.200.w100.c100.o100.cbow.e5.catcl.600.neg5.ns.nosub"
+    word_vec_path = "../common_corpus/data/50lm/en/train.txt.200.w100.c100.o50.cbow.e5.min5.catcl.600.neg5.ns.nosub"
     corpus_path = "../common_corpus/data/50lm/en/train.txt"
     cluster_path = "../common_corpus/data/50lm/en/train.txt.cluster.600"
     tnse = TSNEWrapper(corpus_path, cluster_path)
-    #  tnse.show_n_vectors(200)
-    tnse.savefig("./foo.pdf", word_vec_path)
-    word_vec_path = "../common_corpus/data/50lm/en/after_finue.vec"
-    tnse.savefig("./foo2.pdf", word_vec_path, before_finue=False)
+    tnse.savefig("./foo3.pdf", word_vec_path)
+    word_vec_path = "../common_corpus/data/50lm/en/after_finue_nocluster_min5.vec"
+    tnse.savefig("./foo4.pdf", word_vec_path, before_finue=False)
 
-    word_vec_path = "../common_corpus/data/50lm/en/after_finue_nocluster.vec"
-    tnse.savefig("./foo3.pdf", word_vec_path, before_finue=False)
+    #  word_vec_path = "../common_corpus/data/50lm/en/after_finue_nocluster.vec"
+    #  tnse.savefig("./foo5.pdf", word_vec_path, before_finue=False)
