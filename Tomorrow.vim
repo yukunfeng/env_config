@@ -245,9 +245,13 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("NonText", s:selection, "", "")
 	call <SID>X("SpecialKey", s:selection, "", "")
 	call <SID>X("Search", s:foreground, s:yellow, "")
-    call <SID>X("TabLine", s:foreground, s:background, "") " non-active tab
-    call <SID>X("TabLineSel", s:foreground, s:current_tab, "") " active tab
+    call <SID>X("TabLine", "C1C0C0", s:background, "") " non-active tab
+    call <SID>X("TabLineSel", s:foreground, s:background, "") " active tab
     call <SID>X("TabLineFill", s:background, s:background, "") " remaining
+    " following setting has shadown for active tab
+    " call <SID>X("TabLine", s:foreground, s:background, "") " non-active tab
+    " call <SID>X("TabLineSel", s:foreground, s:current_tab, "") " active tab
+    " call <SID>X("TabLineFill", s:background, s:background, "") " remaining
 	call <SID>X("StatusLine", s:window, s:yellow, "reverse")
 	call <SID>X("StatusLineNC", s:window, s:foreground, "reverse")
 	call <SID>X("VertSplit", s:window, s:window, "none")
