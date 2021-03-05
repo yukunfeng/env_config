@@ -54,6 +54,8 @@ set -g status-right-length 100
 set -g status-right-style fg=black
 set -g status-right-style bold
 # set -g status-right '#[fg=#f99157,bg=#2d2d2d] %H:%M |#[fg=#6699cc] %y.%m.%d '
+#
+set "status-left" "#[fg=#000000,bg=#feffff] $USER@#h[#S] #[fg=#000000,bg=#feffff]"
 
 # make background window look like white tab
 set-window-option -g window-status-style bg=default
@@ -61,11 +63,13 @@ set-window-option -g window-status-style fg=white
 # set-window-option -g window-status-style fg=white
 set-window-option -g window-status-style none
 # set-window-option -g window-status-format '#[fg=#6699cc,bg=colour235] #I #[fg=#999999,bg=#2d2d2d] #W #[default]'
-set-window-option -g window-status-format '#[fg=#6699cc,bg=#feffff] #I #[fg=#999999,bg=#feffff] #W #[default]'
+# set-window-option -g window-status-format '#[fg=#6699cc,bg=#feffff] #I #[fg=#999999,bg=#feffff] #W #[default]'
+set-window-option -g window-status-format '#[fg=#C1C0C0,bg=#feffff] #I #[fg=#C1C0C0,bg=#feffff] #W #[default]'
 
 # make foreground window look like bold yellow foreground tab
 set-window-option -g window-status-current-style none
-set-window-option -g window-status-current-format '#[fg=#f99157,bg=#E8E7E7] #I #[fg=#cccccc,bg=#E8E7E7] #W #[default]'
+set-window-option -g window-status-current-format '#[fg=#000000,bg=#feffff] #I #[fg=#000000,bg=#feffff] #W #[default]'
+# set-window-option -g window-status-current-format '#[fg=#343333,bg=#E8E7E7] #I #[fg=#343333,bg=#E8E7E7] #W #[default]'
 
 # active terminal yellow border, non-active white
 set -g pane-border-style bg=default
