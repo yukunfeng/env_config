@@ -222,10 +222,10 @@ let g:python_highlight_all = 1
 
 """ setting for nerd commenter
 " short cut for comment, see more about nerd comment by :help
-noremap ,m :call NERDComment(1, 'minimal')<Return>
-noremap ,i :call NERDComment(1, 'invert')<Return>
-noremap ,s :call NERDComment(1, 'sexy')<Return>
-noremap ,u :call NERDComment(1, 'uncomment')<Return>
+noremap ,m :call nerdcommenter#Comment(1, 'minimal')<Return>
+noremap ,i :call nerdcommenter#Comment(1, 'invert')<Return>
+noremap ,s :call nerdcommenter#Comment(1, 'sexy')<Return>
+noremap ,u :call nerdcommenter#Comment(1, 'uncomment')<Return>
 let NERDSpaceDelims = 1        " leave a space after commentering
 
 " setting for ale
