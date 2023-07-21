@@ -157,27 +157,20 @@ export LC_ALL=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-# Set for macos
-LS_COLORS='di=1:fi=30:ex=30' ; export LS_COLORS
-alias l='ls -htl'
 # coloring output from ls for mac
+# Note that on linux, use LS_COLORS
+LS_COLORS="di=1;30:ln=30:so=30:pi=30:ex=30:bd=30:cd=30:su=30:sg=30:tw=30:ow=30"
+export LS_COLORS
+LSCOLORS="Axaxaxaxaxaxaxaxaxaxax"
+export LSCOLORS
+alias l='ls -htl'
+
 if [ "$MY_MACHINE_TYPE" = "Mac" ]; then
     # brew install coreutils at first
     # Or simply use following line if gls is not available
-    # export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
-    # alias l='gls -htl --color=auto'
-    # alias ll='l'
-    # alias ls='gls --color=auto'
     alias ccc='pbcopy'
     alias vvv='pbpaste'
     alias shuf='gshuf'
-else
-    # Alias the command for linux
-    # alias l='ls -lht --color=auto'
-    # alias ll='l'
-    alias ccc='xclip -selection clipboard'
-    alias vvv='xclip -selection clipboard -o'
-    alias open='gnome-open'
 fi
 
 # Setting for pyenv
